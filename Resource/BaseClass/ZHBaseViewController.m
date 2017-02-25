@@ -14,6 +14,13 @@
 
 @implementation ZHBaseViewController
 
+-(NSMutableDictionary *)params{
+    if (!_params) {
+        _params = [NSMutableDictionary new];
+    }
+    return _params;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

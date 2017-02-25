@@ -14,7 +14,7 @@
 #define D_WEEK		604800
 #define D_YEAR		31556926
 
-@interface NSDate (custom)
+@interface NSDate (Custom)
 
 + (NSCalendar *) currentCalendar; // avoid bottlenecks
 

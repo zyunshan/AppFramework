@@ -23,7 +23,7 @@
 		7E1743291E61591E002C2C6D /* ZHUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743231E61591E002C2C6D /* ZHUpdateManager.m */; };
 		7E1743331E616274002C2C6D /* NSTimer+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743321E616274002C2C6D /* NSTimer+Custom.m */; };
 		7E1743391E616837002C2C6D /* UIAlertController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743381E616837002C2C6D /* UIAlertController+Custom.m */; };
-		7E17433C1E616892002C2C6D /* NSDate+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17433B1E616892002C2C6D /* NSDate+custom.m */; };
+		7E17433C1E616892002C2C6D /* NSDate+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17433B1E616892002C2C6D /* NSDate+Custom.m */; };
 		D35ED90BAADB853B74235597 /* libPods-AppFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21BB5C437355B117ED1887 /* libPods-AppFramework.a */; };
 /* End PBXBuildFile section */
 
@@ -86,8 +86,8 @@
 		7E1743321E616274002C2C6D /* NSTimer+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Custom.m"; sourceTree = "<group>"; };
 		7E1743371E616837002C2C6D /* UIAlertController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Custom.h"; sourceTree = "<group>"; };
 		7E1743381E616837002C2C6D /* UIAlertController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Custom.m"; sourceTree = "<group>"; };
-		7E17433A1E616892002C2C6D /* NSDate+custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+custom.h"; sourceTree = "<group>"; };
-		7E17433B1E616892002C2C6D /* NSDate+custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+custom.m"; sourceTree = "<group>"; };
+		7E17433A1E616892002C2C6D /* NSDate+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Custom.h"; sourceTree = "<group>"; };
+		7E17433B1E616892002C2C6D /* NSDate+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Custom.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,16 +214,16 @@
 		7E1743121E61591E002C2C6D /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				7E17431B1E61591E002C2C6D /* ZHBaseViewController.h */,
+				7E17431C1E61591E002C2C6D /* ZHBaseViewController.m */,
+				7E1743191E61591E002C2C6D /* ZHBaseTableViewController.h */,
+				7E17431A1E61591E002C2C6D /* ZHBaseTableViewController.m */,
 				7E1743131E61591E002C2C6D /* ZHBaseNavigationController.h */,
 				7E1743141E61591E002C2C6D /* ZHBaseNavigationController.m */,
 				7E1743151E61591E002C2C6D /* ZHBaseTabBarController.h */,
 				7E1743161E61591E002C2C6D /* ZHBaseTabBarController.m */,
 				7E1743171E61591E002C2C6D /* ZHBaseTableViewCell.h */,
 				7E1743181E61591E002C2C6D /* ZHBaseTableViewCell.m */,
-				7E1743191E61591E002C2C6D /* ZHBaseTableViewController.h */,
-				7E17431A1E61591E002C2C6D /* ZHBaseTableViewController.m */,
-				7E17431B1E61591E002C2C6D /* ZHBaseViewController.h */,
-				7E17431C1E61591E002C2C6D /* ZHBaseViewController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -231,8 +231,8 @@
 		7E17431D1E61591E002C2C6D /* Catory */ = {
 			isa = PBXGroup;
 			children = (
-				7E17433A1E616892002C2C6D /* NSDate+custom.h */,
-				7E17433B1E616892002C2C6D /* NSDate+custom.m */,
+				7E17433A1E616892002C2C6D /* NSDate+Custom.h */,
+				7E17433B1E616892002C2C6D /* NSDate+Custom.m */,
 				7E1743311E616274002C2C6D /* NSTimer+Custom.h */,
 				7E1743321E616274002C2C6D /* NSTimer+Custom.m */,
 			);
@@ -468,7 +468,7 @@
 				7E1743241E61591E002C2C6D /* ZHBaseNavigationController.m in Sources */,
 				7E1742B41E615447002C2C6D /* ViewController.m in Sources */,
 				7E1743271E61591E002C2C6D /* ZHBaseTableViewController.m in Sources */,
-				7E17433C1E616892002C2C6D /* NSDate+custom.m in Sources */,
+				7E17433C1E616892002C2C6D /* NSDate+Custom.m in Sources */,
 				7E1743291E61591E002C2C6D /* ZHUpdateManager.m in Sources */,
 				7E1742B11E615447002C2C6D /* AppDelegate.m in Sources */,
 				7E1743391E616837002C2C6D /* UIAlertController+Custom.m in Sources */,

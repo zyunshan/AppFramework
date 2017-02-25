@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 tokee. All rights reserved.
 //
 
-#import "NSDate+custom.h"
+#import "NSDate+Custom.h"
 
 // Thanks, AshFurrow
 static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfYear |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal);
 
 
-@implementation NSDate (custom)
+@implementation NSDate (Custom)
 
 // resolve iOS7/8 crash issues http://stackoverflow.com/questions/24624137/ios-nscalendar-crash-references-issue
 + (NSCalendar *) currentCalendar

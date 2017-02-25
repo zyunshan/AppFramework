@@ -10,4 +10,13 @@
 
 @interface ZHBaseViewController : UIViewController
 
+/**
+ 可作为用于传递参数 或者用于存放网络请求参数
+ */
+@property (strong, nonatomic) NSMutableDictionary *params;
+
+/**
+ 用于回调传递参数
+ */
+@property (copy, nonatomic) void (^callback)(id model);
 @end

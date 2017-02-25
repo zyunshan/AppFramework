@@ -8,6 +8,7 @@
 
 #import "ZHBaseViewController.h"
 
-@interface ZHBaseTableViewController : ZHBaseViewController
+@interface ZHBaseTableViewController : ZHBaseViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) UITableView *tableView;
 @end
