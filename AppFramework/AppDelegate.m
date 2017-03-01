@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ZHUpdateManager.h"
+#import "UpdateManager.h"
 
 @interface AppDelegate ()
 

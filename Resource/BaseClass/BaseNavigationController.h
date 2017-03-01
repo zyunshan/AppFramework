@@ -1,13 +1,13 @@
 //
-//  ZHAppConfigDefine.h
+//  BaseNavigationController.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#ifndef ZHAppConfigDefine_h
-#define ZHAppConfigDefine_h
+#import <UIKit/UIKit.h>
 
+@interface BaseNavigationController : UINavigationController
 
-#endif /* ZHAppConfigDefine_h */
+@end

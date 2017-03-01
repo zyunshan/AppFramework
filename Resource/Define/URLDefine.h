@@ -1,13 +1,14 @@
 //
-//  ZHBaseTabBarController.h
+//  URLDefine.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#ifndef URLDefine_h
+#define URLDefine_h
 
-@interface ZHBaseTabBarController : UITabBarController
+#define api_login  URLString(@"login")
 
-@end
+#endif /* URLDefine_h */

@@ -1,13 +1,13 @@
 //
-//  ZHMethodDefine.h
+//  MethodDefine.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#ifndef ZHMethodDefine_h
-#define ZHMethodDefine_h
+#ifndef MethodDefine_h
+#define MethodDefine_h
 
 #define FONT(size)  [UIFont systemFontOfSize:size]
 #define FONT(fontName, size) [UIFont fontWithName:fontName size:size]
@@ -17,4 +17,4 @@
 
 #define URLString(str)  [NSURL URLWithString:str]
 
-#endif /* ZHMethodDefine_h */
+#endif /* MethodDefine_h */

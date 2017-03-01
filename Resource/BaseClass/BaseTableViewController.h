@@ -1,14 +1,14 @@
 //
-//  ZHBaseTableViewController.h
+//  BaseTableViewController.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import "ZHBaseViewController.h"
+#import "BaseViewController.h"
 
-@interface ZHBaseTableViewController : ZHBaseViewController <UITableViewDelegate, UITableViewDataSource>
+@interface BaseTableViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
 @end

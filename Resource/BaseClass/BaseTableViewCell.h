@@ -1,5 +1,5 @@
 //
-//  ZHBaseTableViewCell.h
+//  BaseTableViewCell.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHBaseTableViewCell : UITableViewCell
+@interface BaseTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) id model;
 
