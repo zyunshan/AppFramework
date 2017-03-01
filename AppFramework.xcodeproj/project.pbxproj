@@ -16,8 +16,6 @@
 		7E1742B71E615447002C2C6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1742B51E615447002C2C6D /* Main.storyboard */; };
 		7E1742B91E615447002C2C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E1742B81E615447002C2C6D /* Assets.xcassets */; };
 		7E1742BC1E615447002C2C6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1742BA1E615447002C2C6D /* LaunchScreen.storyboard */; };
-		7E1742C71E615447002C2C6D /* AppFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1742C61E615447002C2C6D /* AppFrameworkTests.m */; };
-		7E1742D21E615447002C2C6D /* AppFrameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1742D11E615447002C2C6D /* AppFrameworkUITests.m */; };
 		7E1743241E61591E002C2C6D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743141E61591E002C2C6D /* BaseNavigationController.m */; };
 		7E1743251E61591E002C2C6D /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743161E61591E002C2C6D /* BaseTabBarController.m */; };
 		7E1743261E61591E002C2C6D /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743181E61591E002C2C6D /* BaseTableViewCell.m */; };
@@ -69,11 +67,7 @@
 		7E1742BB1E615447002C2C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E1742BD1E615447002C2C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E1742C21E615447002C2C6D /* AppFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E1742C61E615447002C2C6D /* AppFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFrameworkTests.m; sourceTree = "<group>"; };
-		7E1742C81E615447002C2C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E1742CD1E615447002C2C6D /* AppFrameworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppFrameworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E1742D11E615447002C2C6D /* AppFrameworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFrameworkUITests.m; sourceTree = "<group>"; };
-		7E1742D31E615447002C2C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E1743131E61591E002C2C6D /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		7E1743141E61591E002C2C6D /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		7E1743151E61591E002C2C6D /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
@@ -148,8 +142,6 @@
 			children = (
 				7E1743111E61591E002C2C6D /* Resource */,
 				7E1742AB1E615447002C2C6D /* AppFramework */,
-				7E1742C51E615447002C2C6D /* AppFrameworkTests */,
-				7E1742D01E615447002C2C6D /* AppFrameworkUITests */,
 				7E1742AA1E615447002C2C6D /* Products */,
 				640909A62F109860EDDAF89E /* Pods */,
 				33E6A87F6BB0BB931D524BBA /* Frameworks */,
@@ -189,24 +181,6 @@
 				523E4ABF1E670ACB00573BA0 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7E1742C51E615447002C2C6D /* AppFrameworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				7E1742C61E615447002C2C6D /* AppFrameworkTests.m */,
-				7E1742C81E615447002C2C6D /* Info.plist */,
-			);
-			path = AppFrameworkTests;
-			sourceTree = "<group>";
-		};
-		7E1742D01E615447002C2C6D /* AppFrameworkUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7E1742D11E615447002C2C6D /* AppFrameworkUITests.m */,
-				7E1742D31E615447002C2C6D /* Info.plist */,
-			);
-			path = AppFrameworkUITests;
 			sourceTree = "<group>";
 		};
 		7E1743111E61591E002C2C6D /* Resource */ = {
@@ -504,7 +478,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E1742C71E615447002C2C6D /* AppFrameworkTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +485,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E1742D21E615447002C2C6D /* AppFrameworkUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
