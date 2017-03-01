@@ -1,22 +1,33 @@
 //
-//  ZHBaseNavigationController.m
+//  BaseTableViewController.m
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import "ZHBaseNavigationController.h"
+#import "BaseTableViewController.h"
 
-@interface ZHBaseNavigationController ()
+@interface BaseTableViewController ()
 
 @end
 
-@implementation ZHBaseNavigationController
+@implementation BaseTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.tableView];
+    
+}
+
+-(UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [UITableView new];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +45,11 @@
 }
 */
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
 @end

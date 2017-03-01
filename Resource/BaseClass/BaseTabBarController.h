@@ -1,5 +1,5 @@
 //
-//  ZHBaseNavigationController.h
+//  BaseTabBarController.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHBaseNavigationController : UINavigationController
+@interface BaseTabBarController : UITabBarController
 
 @end

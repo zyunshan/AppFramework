@@ -1,18 +1,18 @@
 //
-//  ZHBaseTabBarController.m
+//  BaseNavigationController.m
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import "ZHBaseTabBarController.h"
+#import "BaseNavigationController.h"
 
-@interface ZHBaseTabBarController ()
+@interface BaseNavigationController ()
 
 @end
 
-@implementation ZHBaseTabBarController
+@implementation BaseNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

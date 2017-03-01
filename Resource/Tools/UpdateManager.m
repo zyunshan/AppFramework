@@ -1,20 +1,20 @@
 //
-//  ZHUpdateManager.m
+//  UpdateManager.m
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import "ZHUpdateManager.h"
+#import "UpdateManager.h"
 
-@implementation ZHUpdateManager
+@implementation UpdateManager
 
 +(instancetype)shareManager{
-    static ZHUpdateManager *manager = nil;
+    static UpdateManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[ZHUpdateManager alloc]init];
+        manager = [[UpdateManager alloc]init];
     });
     return manager;
 }

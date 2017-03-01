@@ -1,5 +1,5 @@
 //
-//  ZHUpdateManager.h
+//  UpdateManager.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZHUpdateManager : NSObject
+@interface UpdateManager : NSObject
 
 +(instancetype)shareManager;
 

@@ -1,5 +1,5 @@
 //
-//  ZHBaseViewController.h
+//  BaseViewController.h
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHBaseViewController : UIViewController
+@interface BaseViewController : UIViewController
 
 /**
  可作为用于传递参数 或者用于存放网络请求参数

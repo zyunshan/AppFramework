@@ -1,25 +1,18 @@
 //
-//  ZHBaseViewController.m
+//  BaseTabBarController.m
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import "ZHBaseViewController.h"
+#import "BaseTabBarController.h"
 
-@interface ZHBaseViewController ()
+@interface BaseTabBarController ()
 
 @end
 
-@implementation ZHBaseViewController
-
--(NSMutableDictionary *)params{
-    if (!_params) {
-        _params = [NSMutableDictionary new];
-    }
-    return _params;
-}
+@implementation BaseTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

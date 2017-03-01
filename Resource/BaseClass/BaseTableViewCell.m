@@ -1,14 +1,14 @@
 //
-//  ZHBaseTableViewCell.m
+//  BaseTableViewCell.m
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import "ZHBaseTableViewCell.h"
+#import "BaseTableViewCell.h"
 
-@implementation ZHBaseTableViewCell
+@implementation BaseTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
