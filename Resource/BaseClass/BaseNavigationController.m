@@ -1,18 +1,18 @@
 //
-//  ZHBaseNavigationController.m
+//  BaseNavigationController.m
 //  AppFramework
 //
 //  Created by cnsunrun on 2017/2/25.
 //  Copyright © 2017年 yunshan. All rights reserved.
 //
 
-#import "ZHBaseNavigationController.h"
+#import "BaseNavigationController.h"
 
-@interface ZHBaseNavigationController ()
+@interface BaseNavigationController ()
 
 @end
 
-@implementation ZHBaseNavigationController
+@implementation BaseNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
