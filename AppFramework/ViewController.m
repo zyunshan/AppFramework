@@ -24,6 +24,24 @@
     [self.view addSubview:button];
     button.backgroundColor = [UIColor redColor];
     
+    __block typeof(self) weakSelf = self;
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.equalTo(weakSelf.view);
+        make.width.height.mas_equalTo(50);
+    }];
+    
+    [self.view layoutIfNeeded];
+    
+    NSLog(@"%@", NSStringFromCGRect(button.frame));
+    
+    [button mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo(20);
+        make.width.height.mas_equalTo(20);
+    }];
+//    [self.view layoutIfNeeded];
+    NSLog(@"%@", NSStringFromCGRect(button.frame));
+    
 }
 
 

@@ -11,7 +11,7 @@
 @implementation Request
 
 -(NSString *)method{
-    return METHOD_GET;
+    return GET;
 }
 @end
 
@@ -44,6 +44,6 @@
     return @"uploadFile";
 }
 - (NSString *)method{
-    return METHOD_POST;
+    return POST;
 }
 @end

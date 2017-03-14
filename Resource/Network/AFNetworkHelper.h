@@ -10,8 +10,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define METHOD_POST     @"POST"
-#define METHOD_GET      @"GET"
+#define POST     @"POST"
+#define GET      @"GET"
 
 @protocol UpdateImageProtocol <NSObject>
 
@@ -50,7 +50,7 @@
  *  @param success <#success description#>
  *  @param failure <#failure description#>
  */
--(void)uploadReq:(id<UpdateImageProtocol, RequestProtocol>)req success:(void(^)(id responseObject))success failure:(void(^)(NSInteger code, NSString *errMsg))failure;
+-(void)uploadReq:(id<UpdateImageProtocol, RequestProtocol>)req success:(void(^)(id responseObject))success failure:(void(^)(NSString *errMsg))failure;
 
 
 /**
@@ -63,7 +63,7 @@
  *  @param success    <#success description#>
  *  @param failure    <#failure description#>
  */
--(void)uploadImageWithURL:(NSString *)url imgData:(NSMutableArray *)imgDatas parameters:(id)parameters fileName:(NSString *)fileName success:(void(^)(NSString *url))success failure:(void(^)(NSInteger code, NSString *msg))failure;
+-(void)uploadImageWithURL:(NSString *)url imgData:(NSMutableArray *)imgDatas parameters:(id)parameters fileName:(NSString *)fileName success:(void(^)(id response))success failure:(void(^)(NSError *error))failure;
 
 
 #pragma mark - 其他请求
@@ -77,7 +77,7 @@
  *  @param success    成功回调
  *  @param failure    失败回调
  */
--(void)requestWithURL:(NSString *)url method:(NSString *)method parameters:(id)parameters success:(void(^)(NSURLSessionDataTask *task, id responseObject))success failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+-(void)requestWithURL:(NSString *)url method:(NSString *)method parameters:(id)parameters success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
 
 /**
  *  对象方式请求
@@ -95,7 +95,7 @@
  *  @param request  <#request description#>
  *  @param response <#response description#>
  */
--(void)sendRequest:(id<RequestProtocol>)request response:(void(^)(BOOL result, NSString *errMsg))response;
+-(void)sendRequest:(id<RequestProtocol>)request response:(void(^)(NSString *errMsg))response;
 
 /**
  *  自定义请求
