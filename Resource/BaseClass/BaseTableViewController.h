@@ -11,4 +11,9 @@
 @interface BaseTableViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
+
+/**
+ 数据源
+ */
+@property (strong, nonatomic) NSMutableArray *dataSource;
 @end

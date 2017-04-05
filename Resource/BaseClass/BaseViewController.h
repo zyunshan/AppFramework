@@ -19,4 +19,12 @@
  用于回调传递参数
  */
 @property (copy, nonatomic) void (^callback)(id model);
+
+/**
+ 跳转到下一个视图控制器
+
+ @param className 控制器类名
+ @param params 控制器对应的 {property : value}
+ */
+-(id)push:(NSString *)className withParams:(NSDictionary *)params;
 @end

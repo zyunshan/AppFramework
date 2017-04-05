@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "UIAlertController+Custom.h"
+#import "AFNetworkHelper.h"
+#import "TestModel.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController ()
 
@@ -39,8 +42,12 @@
         make.top.mas_equalTo(20);
         make.width.height.mas_equalTo(20);
     }];
-//    [self.view layoutIfNeeded];
-    NSLog(@"%@", NSStringFromCGRect(button.frame));
+
+    
+    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(20, 90, SCREEN_WIDTH-40, 79)];
+    textView.maxInputLength = 20;
+    textView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:textView];
     
 }
 
@@ -52,9 +59,8 @@
 }
 
 -(void)buttonAction:(UIButton *)button{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"这是 tittle" message:@"这是 message 回事做傻事所所所所" preferredStyle:1];
-    [alertController addItems:@[@"item0",@"item1",@"item2",@"item3",@"item4",@"item5",@"item6"] block:^(NSInteger index) {
-        NSLog(@"%ld",index);
+    UIAlertController *alertController = [UIAlertController alertWithTitle:@"这是标题" message:@"这是福建信息" style:UIAlertControllerStyleActionSheet cancel:@"取消" others:@[@"item1", @"item2", @"item3", @"item4"] block:^(NSInteger index) {
+        
     }];
     [self presentViewController:alertController animated:YES completion:nil];
 }

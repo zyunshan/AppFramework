@@ -40,5 +40,19 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(id)push:(NSString *)className withParams:(NSDictionary *)params{
+    Class clss = NSClassFromString(className);
+    if ([clss isSubclassOfClass:self.superclass]) {
+        id viewController = [[clss alloc]init];
+        for (NSString *key in params.allKeys) {
+            [viewController setValue:params[key] forKey:key];
+        }
+        [viewController setObject:params forKey:params];
+        [self.navigationController pushViewController:viewController animated:YES];
+        return viewController;
+    }else{
+        NSLog(@"%@---%@", NSStringFromSelector(_cmd), className);
+    }
+    return nil;
+}
 @end

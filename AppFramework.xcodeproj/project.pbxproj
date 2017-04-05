@@ -21,10 +21,16 @@
 		7E1743261E61591E002C2C6D /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743181E61591E002C2C6D /* BaseTableViewCell.m */; };
 		7E1743271E61591E002C2C6D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17431A1E61591E002C2C6D /* BaseTableViewController.m */; };
 		7E1743281E61591E002C2C6D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17431C1E61591E002C2C6D /* BaseViewController.m */; };
-		7E1743291E61591E002C2C6D /* UpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743231E61591E002C2C6D /* UpdateManager.m */; };
 		7E1743331E616274002C2C6D /* NSTimer+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743321E616274002C2C6D /* NSTimer+Custom.m */; };
 		7E1743391E616837002C2C6D /* UIAlertController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1743381E616837002C2C6D /* UIAlertController+Custom.m */; };
 		7E17433C1E616892002C2C6D /* NSDate+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E17433B1E616892002C2C6D /* NSDate+Custom.m */; };
+		7E1975F41E94B95500954869 /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1975ED1E94B95400954869 /* AppDelegate+Notification.m */; };
+		7E1975F51E94B95500954869 /* UpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1975F01E94B95500954869 /* UpdateManager.m */; };
+		7E1975F61E94B95500954869 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1975F31E94B95500954869 /* UserData.m */; };
+		7E39FBE91E8F887A00E5029D /* UITextView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39FBE81E8F887A00E5029D /* UITextView+Custom.m */; };
+		7E39FBED1E8F92C900E5029D /* IMGScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */; };
+		7ED6F6BA1E8E6E5B003BAE58 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6F6B91E8E6E5B003BAE58 /* File.txt */; };
+		7ED6F6BD1E8E6ECE003BAE58 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6F6BC1E8E6ECE003BAE58 /* TestModel.m */; };
 		D35ED90BAADB853B74235597 /* libPods-AppFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21BB5C437355B117ED1887 /* libPods-AppFramework.a */; };
 /* End PBXBuildFile section */
 
@@ -78,20 +84,28 @@
 		7E17431A1E61591E002C2C6D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		7E17431B1E61591E002C2C6D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		7E17431C1E61591E002C2C6D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		7E1743221E61591E002C2C6D /* UpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateManager.h; sourceTree = "<group>"; };
-		7E1743231E61591E002C2C6D /* UpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateManager.m; sourceTree = "<group>"; };
 		7E17432A1E615AE9002C2C6D /* MethodDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodDefine.h; sourceTree = "<group>"; };
 		7E17432B1E615CE8002C2C6D /* URLDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLDefine.h; sourceTree = "<group>"; };
-		7E17432C1E615D0F002C2C6D /* NotificationDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationDefine.h; sourceTree = "<group>"; };
-		7E17432E1E615D39002C2C6D /* ConfigDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigDefine.h; sourceTree = "<group>"; };
-		7E17432F1E615D4A002C2C6D /* EnumDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumDefine.h; sourceTree = "<group>"; };
-		7E1743301E615D5E002C2C6D /* UIDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIDefine.h; sourceTree = "<group>"; };
 		7E1743311E616274002C2C6D /* NSTimer+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Custom.h"; sourceTree = "<group>"; };
 		7E1743321E616274002C2C6D /* NSTimer+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Custom.m"; sourceTree = "<group>"; };
 		7E1743371E616837002C2C6D /* UIAlertController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Custom.h"; sourceTree = "<group>"; };
 		7E1743381E616837002C2C6D /* UIAlertController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Custom.m"; sourceTree = "<group>"; };
 		7E17433A1E616892002C2C6D /* NSDate+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Custom.h"; sourceTree = "<group>"; };
 		7E17433B1E616892002C2C6D /* NSDate+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Custom.m"; sourceTree = "<group>"; };
+		7E1975EC1E94B95400954869 /* AppDelegate+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Notification.h"; sourceTree = "<group>"; };
+		7E1975ED1E94B95400954869 /* AppDelegate+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Notification.m"; sourceTree = "<group>"; };
+		7E1975EF1E94B95400954869 /* UpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateManager.h; sourceTree = "<group>"; };
+		7E1975F01E94B95500954869 /* UpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateManager.m; sourceTree = "<group>"; };
+		7E1975F21E94B95500954869 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		7E1975F31E94B95500954869 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		7E39FBE71E8F887A00E5029D /* UITextView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Custom.h"; sourceTree = "<group>"; };
+		7E39FBE81E8F887A00E5029D /* UITextView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Custom.m"; sourceTree = "<group>"; };
+		7E39FBEA1E8F8DC200E5029D /* AppDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefine.h; sourceTree = "<group>"; };
+		7E39FBEB1E8F92C900E5029D /* IMGScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGScaleView.h; sourceTree = "<group>"; };
+		7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGScaleView.m; sourceTree = "<group>"; };
+		7ED6F6B91E8E6E5B003BAE58 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
+		7ED6F6BB1E8E6ECE003BAE58 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestModel.h; path = AppFramework/TestModel.h; sourceTree = SOURCE_ROOT; };
+		7ED6F6BC1E8E6ECE003BAE58 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestModel.m; path = AppFramework/TestModel.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +184,7 @@
 				7E1742BA1E615447002C2C6D /* LaunchScreen.storyboard */,
 				7E1742BD1E615447002C2C6D /* Info.plist */,
 				7E1742AC1E615447002C2C6D /* Supporting Files */,
+				7ED6F6B91E8E6E5B003BAE58 /* File.txt */,
 			);
 			path = AppFramework;
 			sourceTree = "<group>";
@@ -230,8 +245,12 @@
 		7E17431E1E61591E002C2C6D /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				7E39FBEB1E8F92C900E5029D /* IMGScaleView.h */,
+				7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */,
 				7E1743371E616837002C2C6D /* UIAlertController+Custom.h */,
 				7E1743381E616837002C2C6D /* UIAlertController+Custom.m */,
+				7E39FBE71E8F887A00E5029D /* UITextView+Custom.h */,
+				7E39FBE81E8F887A00E5029D /* UITextView+Custom.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -241,10 +260,7 @@
 			children = (
 				7E17432A1E615AE9002C2C6D /* MethodDefine.h */,
 				7E17432B1E615CE8002C2C6D /* URLDefine.h */,
-				7E17432C1E615D0F002C2C6D /* NotificationDefine.h */,
-				7E17432E1E615D39002C2C6D /* ConfigDefine.h */,
-				7E17432F1E615D4A002C2C6D /* EnumDefine.h */,
-				7E1743301E615D5E002C2C6D /* UIDefine.h */,
+				7E39FBEA1E8F8DC200E5029D /* AppDefine.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -263,15 +279,53 @@
 		7E1743211E61591E002C2C6D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				7E1743221E61591E002C2C6D /* UpdateManager.h */,
-				7E1743231E61591E002C2C6D /* UpdateManager.m */,
+				7E1975F71E94B95F00954869 /* AudioTool */,
+				7E1975EB1E94B95400954869 /* Notification */,
+				7E1975EE1E94B95400954869 /* Update */,
+				7E1975F11E94B95500954869 /* UserData */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		7E1975EB1E94B95400954869 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				7E1975EC1E94B95400954869 /* AppDelegate+Notification.h */,
+				7E1975ED1E94B95400954869 /* AppDelegate+Notification.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		7E1975EE1E94B95400954869 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				7E1975EF1E94B95400954869 /* UpdateManager.h */,
+				7E1975F01E94B95500954869 /* UpdateManager.m */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		7E1975F11E94B95500954869 /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				7E1975F21E94B95500954869 /* UserData.h */,
+				7E1975F31E94B95500954869 /* UserData.m */,
+			);
+			path = UserData;
+			sourceTree = "<group>";
+		};
+		7E1975F71E94B95F00954869 /* AudioTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AudioTool;
 			sourceTree = "<group>";
 		};
 		7E9850841E67DD46008410DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7ED6F6BB1E8E6ECE003BAE58 /* TestModel.h */,
+				7ED6F6BC1E8E6ECE003BAE58 /* TestModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED6F6BA1E8E6E5B003BAE58 /* File.txt in Resources */,
 				7E1742BC1E615447002C2C6D /* LaunchScreen.storyboard in Resources */,
 				7E1742B91E615447002C2C6D /* Assets.xcassets in Resources */,
 				7E1742B71E615447002C2C6D /* Main.storyboard in Resources */,
@@ -468,16 +523,21 @@
 				7E1742B41E615447002C2C6D /* ViewController.m in Sources */,
 				7E1743271E61591E002C2C6D /* BaseTableViewController.m in Sources */,
 				7E17433C1E616892002C2C6D /* NSDate+Custom.m in Sources */,
-				7E1743291E61591E002C2C6D /* UpdateManager.m in Sources */,
 				7E1742B11E615447002C2C6D /* AppDelegate.m in Sources */,
+				7E1975F41E94B95500954869 /* AppDelegate+Notification.m in Sources */,
+				7E39FBE91E8F887A00E5029D /* UITextView+Custom.m in Sources */,
 				523E4AC51E670C8D00573BA0 /* Request.m in Sources */,
+				7E39FBED1E8F92C900E5029D /* IMGScaleView.m in Sources */,
+				7E1975F51E94B95500954869 /* UpdateManager.m in Sources */,
 				7E1743391E616837002C2C6D /* UIAlertController+Custom.m in Sources */,
 				7E1743251E61591E002C2C6D /* BaseTabBarController.m in Sources */,
 				523E4AC21E670BB800573BA0 /* NSObject+Parser.m in Sources */,
 				7E1743281E61591E002C2C6D /* BaseViewController.m in Sources */,
 				7E1743261E61591E002C2C6D /* BaseTableViewCell.m in Sources */,
 				7E1742AE1E615447002C2C6D /* main.m in Sources */,
+				7ED6F6BD1E8E6ECE003BAE58 /* TestModel.m in Sources */,
 				523E4ABE1E670A0A00573BA0 /* AFNetworkHelper.m in Sources */,
+				7E1975F61E94B95500954869 /* UserData.m in Sources */,
 				7E1743331E616274002C2C6D /* NSTimer+Custom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
