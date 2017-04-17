@@ -25,7 +25,7 @@
 
 
 #import "AppDefine.h"
-
+#import "MethodDefine.h"
 
 #import "UserData.h"
 #endif /* PrefixHeader_pch */

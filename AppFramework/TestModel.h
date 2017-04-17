@@ -15,6 +15,10 @@
 @property (nonatomic, copy) NSString *first_char;
 
 @property (nonatomic, copy) NSArray *list;
+
+@property (nonatomic, assign) NSInteger age;
+
+@property (nonatomic, assign) BOOL sex;
 @end
 
 @interface Model1 : NSObject

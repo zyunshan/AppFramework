@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "UpdateManager.h"
+#import "DBManager.h"
+#import "DBTool.h"
 
 @interface AppDelegate ()
 
@@ -18,9 +20,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [DBManager manager];
     
-
+    [[DBTool tool]createTableWithName:@"person" withItems:@[@"name", @"sex", @"email", @"age", @"level",@"uid"] primaryKey:@"uid"];
    
+    [[DBTool tool] insertTable:@"person" withKeyValues:@{@"uid": @100,
+                                                         @"name": @"呵呵呵",
+                                                         @"email": @"2434783536@qq.com",
+                                                         @"age": @27,
+                                                         @"level": @"A"}];
+    [[DBTool tool] updateTable:@"person" withKeyValues:@{@"name": @"修改后的名字"} forKey:@"uid" andValue:@"100"];
+    
+    [[DBTool tool] insertTable:@"person" withKeyValues:@{@"uid": @101,
+                                                         @"name": @"101yongh",
+                                                         @"email": @"2422222@qq.com",
+                                                         @"age": @12,
+                                                         @"level": @"A"}];
+    
+    [[DBTool tool] insertTable:@"person" withKeyValues:@{@"uid": @102,
+                                                         @"name": @"101yongh",
+                                                         @"email": @"2422222@qq.com",
+                                                         @"age": @0,
+                                                         @"level": @"C"}];
+    
+    [[DBTool tool] updateTable:@"person" withKeyValues:@{@"email": @"",
+                                                         @"age": @0,
+                                                         @"level": @"B"} forKey:@"uid" andValue:@"101"];
+    
+//    [[DBTool tool] deleteTable:@"person" forKey:@"age" andValue:@"0"];
+    
+    [[DBTool tool] searchTable:@"person" forKeyValues:@{@"age":@0} completionHandle:^(id result) {
+        
+    }];
     return YES;
 }
 
