@@ -10,24 +10,23 @@
 
 @implementation UIAlertController (Custom)
 
--(void)addItems:(NSArray <NSString *>*)items block:(void(^)(NSInteger index))block{
-    for (NSInteger i = 0; i < items.count; i++) {
-        UIAlertAction *action = [UIAlertAction actionWithTitle:items[i] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            block(i);
-        }];
-        [self addAction:action];
-    }
-}
-
 -(void)addItem:(NSString *)item style:(UIAlertActionStyle)style block:(void(^)())block{
     UIAlertAction *action = [UIAlertAction actionWithTitle:item style:style handler:^(UIAlertAction * _Nonnull action) {
         if (block) {
-           block();
+            block();
         }
     }];
     [self addAction:action];
 }
 
+
+-(void)addItems:(NSArray <NSString *>*)items block:(void(^)(NSInteger index))block{
+    for (NSInteger i = 0; i < items.count; i++) {
+        [self addItem:items[i] style:UIAlertActionStyleDefault block:^{
+            block(i);
+        }];
+    }
+}
 
 +(instancetype)alertWithTitle:(NSString *)title message:(NSString *)message style:(UIAlertControllerStyle)style cancel:(NSString *)cancel others:(NSArray <NSString *> *)others block:(void (^)(NSInteger index))block{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:style];

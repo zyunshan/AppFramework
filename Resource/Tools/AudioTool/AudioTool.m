@@ -14,22 +14,15 @@
 #define kAQBufSize 128 * 1024           //每个AudioQueueBuffer的大小
 #define kAudioFileBufferSize 2048       //文件读取数据的缓冲区大小
 #define kMaxPacketDesc 512              //最大的AudioStreamPacketDescription个数
-
 #define NUM_BUFFERS 3
-static UInt32 bufferSize=0x10000;//It muse be pow(2,x)
+static UInt32 gBufferSizeBytes=0x10000;
 
 @interface AudioTool ()
 {
-    //AudioFileStreamID 实例，用于 AudioFileStream 解析
-    AudioFileStreamID  audioFileStreamID;
-    //音频描述对象,保存音频文件相关信息
-    AudioStreamBasicDescription ASBD;
-    //AudioQueueBuffer 引用数组
-    AudioQueueBufferRef buffers[NUM_BUFFERS];
-    //标记当前的 AudioQueueBuffer 是否在使用
-    BOOL inuse[kNumberOfBuffers];
-    //AudeioQueue 引用实例
-    AudioQueueRef audioQueueRef;
+    //播放音频文件
+    AudioFileID audioFile;
+    //音频队列
+    AudioQueueRef audioQueue;
 }
 @end
 
@@ -38,35 +31,49 @@ static UInt32 bufferSize=0x10000;//It muse be pow(2,x)
 -(instancetype)initWithPath:(NSString *)path{
     self = [super init];
     if (self) {
-
+        NSURL *url = [NSURL fileURLWithPath:path];
+        CFURLRef urlRef = (__bridge CFURLRef)url;
+        OSStatus status = AudioFileOpenURL(urlRef, kAudioFileReadPermission, 0, &audioFile);
+        if (status != noErr) {
+            NSLog(@"打开文件失败:%@", path);
+        }
+        
+        UInt32 ioDataSize;
+        AudioStreamBasicDescription dataFormat;
+        //获取音频数据格式
+        AudioFileGetProperty(audioFile, kAudioFilePropertyDataFormat, &ioDataSize, &dataFormat);
+        //创建播放队列
+        status = AudioQueueNewOutput(&dataFormat, audioQueueOutputCallback, (__bridge void*)self, nil, nil, 0, &audioQueue);
+        
+        UInt32 packetMaxSize;
+        UInt32 propertySize;
+        /*
+          audioFile（类型是 AudioFileID）代表你要播放的音频文件
+          kAudioFilePropertyPacketSizeUpperBound 属性ID，用于在音频文件中获取数据包大小的保守上限
+          propertySize kAudioFilePropertyPacketSizeUpperBound对应属性大小
+          packetMaxSize 播放的音频文件数据包大小的保守上限
+         */
+        AudioFileGetProperty(audioFile, kAudioFilePropertyPacketSizeUpperBound, &propertySize, &packetMaxSize);
     }
     return self;
 }
 
+void audioQueueOutputCallback(
+                              void * __nullable       inUserData,
+                              AudioQueueRef           inAQ,
+                              AudioQueueBufferRef     inBuffer){
+    AudioTool *audioTool = (__bridge AudioTool *)inUserData;
+    [audioTool audioQueueRef:inAQ fillWithBuffer:inBuffer];
+}
 
-
+-(void)audioQueueRef:(AudioQueueRef)queue fillWithBuffer:(AudioQueueBufferRef)buffer{
+    UInt32 ioNumBytes;
+    
+//    AudioFileReadPacketData(audioFile, NO, &ioNumBytes, <#AudioStreamPacketDescription * _Nullable outPacketDescriptions#>, <#SInt64 inStartingPacket#>, <#UInt32 * _Nonnull ioNumPackets#>, <#void * _Nullable outBuffer#>)
+}
 
 -(void)startPlaying{
-    if (audioFileStreamID == NULL) {
-        AudioFileStreamOpen((__bridge void *)self, inPropertyListenerProc, inPacketsProc, 0, &audioFileStreamID);
-    }
-}
-
-void inPropertyListenerProc(
-                                          void *							inClientData,
-                                          AudioFileStreamID				inAudioFileStream,
-                                          AudioFileStreamPropertyID		inPropertyID,
-                                          AudioFileStreamPropertyFlags *	ioFlags){
-
-}
-
-void inPacketsProc(
-                   void *							inClientData,
-                   UInt32							inNumberBytes,
-                   UInt32							inNumberPackets,
-                   const void *					inInputData,
-                   AudioStreamPacketDescription	*inPacketDescriptions){
-
+    AudioQueueStart(audioQueue, 0);
 }
 
 -(void)stopPlaying{

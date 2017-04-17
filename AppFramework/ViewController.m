@@ -57,11 +57,50 @@
     textView.maxInputLength = 20;
     textView.backgroundColor = [UIColor redColor];
     [self.view addSubview:textView];
-    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"7143" ofType:@"mp3"];
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"test" ofType:@"mp3"];
     self.tool = [[AudioTool alloc]initWithPath:filePath];
+    
+    //可用资源数目1
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        //我需要资源
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        
+        //可用资源数目0
+        sleep(10);
+        dispatch_semaphore_signal(semaphore);
+        //1
+        NSLog(@"11111");
+    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        //我需要资源
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        
+//        NSLog(@"2222");
+//        sleep(1);
+//        //可用资源数目0
+//        dispatch_semaphore_signal(semaphore);
+//    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        //我需要资源
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        NSLog(@"333333");
+//        //可用资源数目0
+//        dispatch_semaphore_signal(semaphore);
+//    });
+//    
+    NSLog(@"无视你");
+    
+//    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        NSLog(@"+++++");
+//    }];
+    
 }
 
+- (void)viewWillAppear:(BOOL)animated{
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -29,9 +29,9 @@
 		7E1975F61E94B95500954869 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1975F31E94B95500954869 /* UserData.m */; };
 		7E1976391E94DD3500954869 /* AudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1976381E94DD3500954869 /* AudioTool.m */; };
 		7E19763B1E94E38800954869 /* local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E19763A1E94E38800954869 /* local@2x.png */; };
-		7E19763D1E94E59C00954869 /* 7143.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E19763C1E94E59C00954869 /* 7143.mp3 */; };
 		7E39FBE91E8F887A00E5029D /* UITextView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39FBE81E8F887A00E5029D /* UITextView+Custom.m */; };
 		7E39FBED1E8F92C900E5029D /* IMGScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */; };
+		7E5804E21E9613B800D5DAF7 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E5804E11E9613B800D5DAF7 /* test.mp3 */; };
 		7ED6F6BA1E8E6E5B003BAE58 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6F6B91E8E6E5B003BAE58 /* File.txt */; };
 		7ED6F6BD1E8E6ECE003BAE58 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6F6BC1E8E6ECE003BAE58 /* TestModel.m */; };
 		D35ED90BAADB853B74235597 /* libPods-AppFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21BB5C437355B117ED1887 /* libPods-AppFramework.a */; };
@@ -104,12 +104,12 @@
 		7E1976371E94DD3500954869 /* AudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioTool.h; path = AudioTool/AudioTool.h; sourceTree = "<group>"; };
 		7E1976381E94DD3500954869 /* AudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioTool.m; path = AudioTool/AudioTool.m; sourceTree = "<group>"; };
 		7E19763A1E94E38800954869 /* local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "local@2x.png"; sourceTree = "<group>"; };
-		7E19763C1E94E59C00954869 /* 7143.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7143.mp3; sourceTree = "<group>"; };
 		7E39FBE71E8F887A00E5029D /* UITextView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Custom.h"; sourceTree = "<group>"; };
 		7E39FBE81E8F887A00E5029D /* UITextView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Custom.m"; sourceTree = "<group>"; };
 		7E39FBEA1E8F8DC200E5029D /* AppDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefine.h; sourceTree = "<group>"; };
 		7E39FBEB1E8F92C900E5029D /* IMGScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGScaleView.h; sourceTree = "<group>"; };
 		7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGScaleView.m; sourceTree = "<group>"; };
+		7E5804E11E9613B800D5DAF7 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		7ED6F6B91E8E6E5B003BAE58 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		7ED6F6BB1E8E6ECE003BAE58 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestModel.h; path = AppFramework/TestModel.h; sourceTree = SOURCE_ROOT; };
 		7ED6F6BC1E8E6ECE003BAE58 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestModel.m; path = AppFramework/TestModel.m; sourceTree = SOURCE_ROOT; };
@@ -208,8 +208,8 @@
 		7E1743111E61591E002C2C6D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				7E19763C1E94E59C00954869 /* 7143.mp3 */,
 				7E19763A1E94E38800954869 /* local@2x.png */,
+				7E5804E11E9613B800D5DAF7 /* test.mp3 */,
 				7E9850841E67DD46008410DF /* Model */,
 				7E1743121E61591E002C2C6D /* BaseClass */,
 				7E17431D1E61591E002C2C6D /* Catory */,
@@ -457,8 +457,8 @@
 				7ED6F6BA1E8E6E5B003BAE58 /* File.txt in Resources */,
 				7E1742BC1E615447002C2C6D /* LaunchScreen.storyboard in Resources */,
 				7E19763B1E94E38800954869 /* local@2x.png in Resources */,
-				7E19763D1E94E59C00954869 /* 7143.mp3 in Resources */,
 				7E1742B91E615447002C2C6D /* Assets.xcassets in Resources */,
+				7E5804E21E9613B800D5DAF7 /* test.mp3 in Resources */,
 				7E1742B71E615447002C2C6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
