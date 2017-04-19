@@ -67,7 +67,7 @@ void audioQueueOutputCallback(
 }
 
 -(void)audioQueueRef:(AudioQueueRef)queue fillWithBuffer:(AudioQueueBufferRef)buffer{
-    UInt32 ioNumBytes;
+//    UInt32 ioNumBytes;
     
 //    AudioFileReadPacketData(audioFile, NO, &ioNumBytes, <#AudioStreamPacketDescription * _Nullable outPacketDescriptions#>, <#SInt64 inStartingPacket#>, <#UInt32 * _Nonnull ioNumPackets#>, <#void * _Nullable outBuffer#>)
 }

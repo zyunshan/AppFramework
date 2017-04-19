@@ -52,7 +52,7 @@
         make.height.mas_equalTo(30);
     }];
 
-    
+
     UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(20, 90, SCREEN_WIDTH-40, 79)];
     textView.maxInputLength = 20;
     textView.backgroundColor = [UIColor redColor];

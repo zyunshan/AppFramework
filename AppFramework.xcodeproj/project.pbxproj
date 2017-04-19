@@ -10,6 +10,7 @@
 		523E4ABE1E670A0A00573BA0 /* AFNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 523E4ABD1E670A0A00573BA0 /* AFNetworkHelper.m */; };
 		523E4AC21E670BB800573BA0 /* NSObject+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 523E4AC11E670BB800573BA0 /* NSObject+Parser.m */; };
 		523E4AC51E670C8D00573BA0 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 523E4AC41E670C8D00573BA0 /* Request.m */; };
+		7E0B34281EA60B740036B45F /* ConfigDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B34271EA60B740036B45F /* ConfigDefine.m */; };
 		7E1742AE1E615447002C2C6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1742AD1E615447002C2C6D /* main.m */; };
 		7E1742B11E615447002C2C6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1742B01E615447002C2C6D /* AppDelegate.m */; };
 		7E1742B41E615447002C2C6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1742B31E615447002C2C6D /* ViewController.m */; };
@@ -68,6 +69,8 @@
 		523E4AC31E670C8D00573BA0 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		523E4AC41E670C8D00573BA0 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		5E21BB5C437355B117ED1887 /* libPods-AppFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0B34261EA60B740036B45F /* ConfigDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDefine.h; sourceTree = "<group>"; };
+		7E0B34271EA60B740036B45F /* ConfigDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigDefine.m; sourceTree = "<group>"; };
 		7E1742A91E615447002C2C6D /* AppFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1742AD1E615447002C2C6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E1742AF1E615447002C2C6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				7E17432A1E615AE9002C2C6D /* MethodDefine.h */,
 				7E17432B1E615CE8002C2C6D /* URLDefine.h */,
 				7E39FBEA1E8F8DC200E5029D /* AppDefine.h */,
+				7E0B34261EA60B740036B45F /* ConfigDefine.h */,
+				7E0B34271EA60B740036B45F /* ConfigDefine.m */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -572,6 +577,7 @@
 				523E4AC21E670BB800573BA0 /* NSObject+Parser.m in Sources */,
 				7E1743281E61591E002C2C6D /* BaseViewController.m in Sources */,
 				7E1743261E61591E002C2C6D /* BaseTableViewCell.m in Sources */,
+				7E0B34281EA60B740036B45F /* ConfigDefine.m in Sources */,
 				7E1742AE1E615447002C2C6D /* main.m in Sources */,
 				7ED6F6BD1E8E6ECE003BAE58 /* TestModel.m in Sources */,
 				523E4ABE1E670A0A00573BA0 /* AFNetworkHelper.m in Sources */,
@@ -730,6 +736,7 @@
 				INFOPLIST_FILE = AppFramework/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = person.AppFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -746,6 +753,7 @@
 				INFOPLIST_FILE = AppFramework/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = person.AppFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

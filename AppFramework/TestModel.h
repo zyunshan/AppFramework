@@ -21,7 +21,7 @@
 @property (nonatomic, assign) BOOL sex;
 @end
 
-@interface Model1 : NSObject
+@interface Model1 : TestModel
 @property (nonatomic, copy) NSString *p_id;
 
 @property (nonatomic, copy) NSString *title;
