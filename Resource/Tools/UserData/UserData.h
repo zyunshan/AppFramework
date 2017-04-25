@@ -22,7 +22,7 @@ UIKIT_EXTERN NSString *const App_UserData;
 /**
  获取用户信息
  */
--(id)userData;
+-(id)userDataOfClass:(Class)clss;
 
 /**
  更新用户信息

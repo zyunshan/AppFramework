@@ -20,6 +20,7 @@
  */
 @property (copy, nonatomic) void (^callback)(id model);
 
+
 /**
  跳转到下一个视图控制器
 

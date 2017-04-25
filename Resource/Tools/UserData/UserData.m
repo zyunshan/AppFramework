@@ -10,8 +10,6 @@
 
 NSString * const App_UserData = @"用户信息";
 
-#define App_User_Class  @""
-
 @implementation UserData
 
 +(instancetype)shareData{
@@ -28,13 +26,14 @@ NSString * const App_UserData = @"用户信息";
     if (self) {
         NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:App_UserData];
         userInfo = [[NSMutableDictionary alloc]initWithDictionary:dic];
-        Class clss = NSClassFromString(App_User_Class);
-        userModel = [clss mj_objectWithKeyValues:userInfo];
     }
     return self;
 }
 
--(id)userData{
+-(id)userDataOfClass:(Class)clss{
+    if (!userModel) {
+        userModel = [clss mj_objectWithKeyValues:userInfo];
+    }
     return userModel;
 }
 
@@ -44,8 +43,6 @@ NSString * const App_UserData = @"用户信息";
     }else{
         [userInfo addEntriesFromDictionary:[info mj_keyValues]];
     }
-    Class clss = NSClassFromString(App_User_Class);
-    userModel = [clss mj_objectWithKeyValues:userInfo];
     [self save];
 }
 
