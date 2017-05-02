@@ -14,11 +14,16 @@
 /**
  屏幕宽度
  */
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define cs_screen_width [UIScreen mainScreen].bounds.size.width
 
 /**
  屏幕高度
  */
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define cs_screen_height [UIScreen mainScreen].bounds.size.height
+
+/**
+ 导航高度
+ */
+#define cs_nav_height   64
 
 #endif /* AppDefine_h */

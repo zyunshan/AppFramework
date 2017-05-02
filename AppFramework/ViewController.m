@@ -13,8 +13,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 #import "AudioTool.h"
-#import "UIImage+Custom.h"
 #import "NavigationView.h"
+#import "SettingViewController.h"
 
 @interface ViewController ()
 
@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NavigationView *navView = [[NavigationView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
+    NavigationView *navView = [[NavigationView alloc]initWithFrame:CGRectMake(0, 0, cs_screen_width, 64)];
     [self.view addSubview:navView];
     navView.title = @"这是个测试";
     
@@ -34,7 +34,9 @@
     navView.titleView.backgroundColor = [UIColor blueColor];
     
     [navView addItemWithTitle:@"left" position:0 margin:0 width:0 block:^{
-        NSLog(@"1111");
+        SettingViewController *settingVC = [[SettingViewController alloc]init];
+        settingVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:settingVC animated:YES completion:nil];
     }];
     
     [navView addItemWithTitle:@"left-2" position:0 margin:10 width:90 block:nil];

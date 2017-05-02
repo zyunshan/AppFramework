@@ -7,9 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "NavigationView.h"
 
 @interface BaseViewController ()
 
+@property (nonatomic, strong) NavigationView *navigationView;
 @end
 
 @implementation BaseViewController
@@ -24,12 +26,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.navigationView];
     
+}
+
+-(NavigationView *)navigationView{
+    if (!_navigationView) {
+        _navigationView = [[NavigationView alloc]initWithFrame:CGRectMake(0, 0, cs_screen_width, cs_nav_height)];
+    }
+    return _navigationView;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setTitle:(NSString *)title{
+    self.navigationView.title = title;
 }
 
 /*

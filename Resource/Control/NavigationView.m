@@ -47,6 +47,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self loadUI];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
