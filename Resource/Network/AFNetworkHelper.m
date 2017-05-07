@@ -135,7 +135,7 @@
 
 -(void)reqeust:(id<RequestProtocol>)request response:(Class)clsss success:(void(^)(id responseObject))success failure:(void(^)(NSInteger code, NSString *errMsg))failure{
     
-//    [self requestWithURL:[request url] method:[request method] parameters:[(Request *)request toDictionary] response:clsss success:success failure:failure];
+    [self requestWithURL:[request url] method:[request method] parameters:[(NSObject *)request toDictionary] response:clsss success:success failure:failure];
 }
 
 -(void)sendRequest:(id<RequestProtocol>)request response:(void(^)(BOOL result, NSString *errMsg))response{

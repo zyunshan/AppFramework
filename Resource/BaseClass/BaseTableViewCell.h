@@ -15,4 +15,6 @@
 -(void)updateCellWithModel:(id)model;
 
 +(CGFloat)rowHeight;
+
+-(instancetype)initWithReuseIndentifier:(NSString *)indentifier;
 @end

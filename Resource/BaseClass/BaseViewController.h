@@ -18,5 +18,14 @@
 /**
  用于回调传递参数
  */
-@property (copy, nonatomic) void (^callback)(id model);
+@property (copy, nonatomic) void (^callback)(id value1, id value2);
+
+
+/**
+ 从nib加载viewController
+
+ @param className nib对应的viewcontroller 雷明
+ @return viewController
+ */
+-(id)loadNibViewControllerWithClassName:(NSString *)className;
 @end

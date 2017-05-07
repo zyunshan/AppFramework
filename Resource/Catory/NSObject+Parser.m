@@ -12,9 +12,11 @@
 @implementation NSObject (Parser)
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
 }
 
 - (void)setNilValueForKey:(NSString *)key{
+    
 }
 
 - (id)valueForUndefinedKey:(NSString *)key{
@@ -157,12 +159,6 @@
                 }
             }else{
                 [model setValue:[(NSDictionary *)self objectForKey:key] forKey:key];
-              /*  if ([[(NSDictionary *)self objectForKey:key] isKindOfClass:[NSNumber class]]) {
-                    NSNumber *numb = [(NSDictionary *)self objectForKey:key];
-                    [model setValue:numb forKey:key];
-                }else{
-                    [model setValue:[(NSDictionary *)self objectForKey:key] forKey:key];
-                }*/
             }
         }
         return model;

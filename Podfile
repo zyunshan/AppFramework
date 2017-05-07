@@ -6,5 +6,6 @@ target ‘AppFramework’ do
 pod 'Masonry’,'~>1.0.2’
 pod 'AFNetworking', '~>3.1.0'
 pod 'SDWebImage', '~>3.8.2'
+pod 'MJExtension', '~> 3.0.13'
 end
 

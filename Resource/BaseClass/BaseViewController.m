@@ -40,5 +40,12 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(id)loadNibViewControllerWithClassName:(NSString *)className{
+    Class clss = NSClassFromString(className);
+    if ([clss isSubclassOfClass:[UIViewController class]]) {
+        id viewController = [[clss alloc]initWithNibName:className bundle:nil];
+        return viewController;
+    }
+    return nil;
+}
 @end
