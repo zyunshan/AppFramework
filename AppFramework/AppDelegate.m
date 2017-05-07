@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "UpdateManager.h"
+#import "DBManager.h"
+#import "DBTool.h"
 
 @interface AppDelegate ()
 
@@ -18,9 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-
-   
     return YES;
 }
 

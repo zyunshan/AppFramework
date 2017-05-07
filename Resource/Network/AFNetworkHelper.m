@@ -23,111 +23,73 @@
 
 #pragma mark - 上传图片
 
--(void)uploadReq:(id<UpdateImageProtocol, RequestProtocol>)req success:(void(^)(id responseObject))success failure:(void(^)(NSInteger code, NSString *errMsg))failure{
+-(void)uploadReq:(id<UpdateImageProtocol, RequestProtocol>)req success:(void(^)(id responseObject))success failure:(void(^)(NSString *errMsg))failure{
     
-#pragma mark - 添加参数
-//    UserInfoModel *user = [UserData instance].getUserInfo;
-//    NSMutableDictionary *dict = [NSMutableDictionary new];
-//    [dict setObject:user.idCard forKey:@"memberId"];
-//    [dict setObject:[NSDate currentTimeWithFormatter:@"yyyyMMDDHHmmss"] forKey:@"fileName"];
-//    [self uploadImageWithURL:[req url] imgData:[req data] parameters:dict fileName:[req fieldName] success:success failure:failure];
-}
-
--(void)uploadImageWithURL:(NSString *)url imgData:(NSMutableArray *)imgDatas parameters:(id)parameters fileName:(NSString *)fileName success:(void(^)(NSString *url))success failure:(void(^)(NSInteger code, NSString *msg))failure{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",nil];
-    manager.requestSerializer.timeoutInterval = AFWEBAPI_REQUEST_TIMEOUT;
-    __block typeof(imgDatas) weakData = imgDatas;
-    __block typeof(fileName) weakName = fileName;
-    __block typeof(self) weakSelf = self;
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:parameters];
-//    [dict setObject:UPLOADVERSON forKey:@"ver"];
-    
-    [manager POST:url parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        NSInteger imgCount = 0;
-        for (NSData *imageData in weakData) {
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            formatter.dateFormat = @"yyyyMMddHHmmssSSS";
-            NSString *filename = [NSString stringWithFormat:@"%@%@",[formatter stringFromDate:[NSDate date]],@(imgCount)];
-            [formData appendPartWithFileData:imageData name:weakName fileName:filename mimeType:@"image/jpeg"];
-            imgCount++;
-            weakName = [weakName stringByAppendingString:[@(imgCount)description]];
+    void (^failerHandler)(NSError *error) = ^(NSError *error){
+        NSString *returnMsg = [error.userInfo objectForKey:@"NSLocalizedDescription"];
+        if (returnMsg.length == 0 || !returnMsg) {
+            returnMsg = @"网络请求错误";
         }
-    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [weakSelf dealWithResponseObject:responseObject responseClass:nil success:success failure:failure];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failure([error.domain integerValue], [error.userInfo objectForKey:@"NSLocalizedDescription"]);
-    }];
+        failure(returnMsg);
+    };
+    NSMutableDictionary *dict = [NSMutableDictionary new];
+    [self uploadImageWithURL:[req url] imgData:[req data] parameters:dict fileName:[req fieldName] success:success failure:failerHandler];
 }
 
--(void)uploadImgWithUrl:(NSString *)URLString uploadImg:(UIImage *)img parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure{
-    
+-(void)uploadImageWithURL:(NSString *)url imgData:(NSMutableArray *)imgDatas parameters:(id)parameters fileName:(NSString *)fileName success:(void(^)(id response))success failure:(void(^)(NSError *error))failure{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",nil];
-    
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:parameters];
-//    [dict setObject:UPLOADVERSON forKey:@"ver"];
-    
     manager.requestSerializer.timeoutInterval = AFWEBAPI_REQUEST_TIMEOUT;
-    [manager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        NSString *fileName  = @"img.png";
-        NSData *imageData = nil;
-        [formData appendPartWithFileData:imageData name:@"uploadFile" fileName:fileName mimeType:@"image/png"];
+    
+    NSMutableURLRequest *reqest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSMutableData *formData = [[NSMutableData alloc]init];
+    for (int i=0; i< imgDatas.count; i++) {
+        [formData appendData:imgDatas[i]];
+    }
+    NSURLSessionUploadTask *task = [manager uploadTaskWithRequest:reqest fromData:formData progress:^(NSProgress * _Nonnull uploadProgress) {
         
-    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        return success(task,responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        return failure(task,error);
+    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
     }];
+    [task resume];
 }
-
 
 #pragma mark - 一般网络请求
 
--(void)requestWithURL:(NSString *)url method:(NSString *)method parameters:(id)parameters success:(void(^)(NSURLSessionDataTask *task, id responseObject))success failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure{
+-(void)requestWithURL:(NSString *)url method:(NSString *)method parameters:(id)parameters success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
     
     AFHTTPSessionManager *sessionManager=[AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",nil];
     sessionManager.requestSerializer.timeoutInterval = AFWEBAPI_REQUEST_TIMEOUT;
-    
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    NSURL *URL = [NSURL URLWithString:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    [request setHTTPMethod:method];
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil]];
     
-//    [params setObject:UPLOADVERSON forKey:@"ver"];
-    //删除空元素
-    for (NSString *key in [params allKeys]) {
-        NSString *value = params[key];
-        if ([value isKindOfClass:[NSString class]]) {
-            if (!(value.length > 0)) {
-                [params removeObjectForKey:key];
-            }
+    NSURLSessionDataTask *task = [sessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            failure(error);
+        }else{
+            success(responseObject);
         }
-    }
-    
-//    UserInfoModel *user = [UserData instance].getUserInfo;
-//    if (user.idCard.length > 0) {
-//        [params setObject:[user idCard] forKey:@"memberId"];
-//    }
-    
-    if ([method isEqualToString:METHOD_GET]) {
-        [sessionManager GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {} success:success failure:failure];
-    }else{
-        [sessionManager POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {} success:success failure:failure];
-    }
+    }];
+    [task resume];
 }
 
 -(void)requestWithURL:(NSString *)url method:(NSString *)method parameters:(id)parameters response:(Class)clsss success:(void(^)(id responseObject))success failure:(void(^)(NSInteger code, NSString *errMsg))failure{
     __block typeof(self) weakSelf = self;
-    void (^successHandler)(NSURLSessionDataTask *task, id responseObject) = ^(NSURLSessionDataTask *task, id responseObject){
+    //处理请求成功后的结果
+    void (^successHandler)(id responseObject) = ^(id responseObject){
         [weakSelf dealWithResponseObject:responseObject responseClass:clsss success:success failure:failure];
     };
-    
-    void (^failerHandler)(NSURLSessionDataTask *task, NSError *error) = ^(NSURLSessionDataTask *task, NSError *error){
+    //处理网络失败后的结果
+    void (^failerHandler)(NSError *error) = ^(NSError *error){
         NSString *returnMsg = [error.userInfo objectForKey:@"NSLocalizedDescription"];
         if (returnMsg.length == 0 || !returnMsg) {
             returnMsg = @"网络请求错误";
         }
         failure([error.domain integerValue],returnMsg);
-        NSLog(@"%@\n%@", task.response.URL, error);
     };
     
     [self requestWithURL:url method:method parameters:parameters success:successHandler failure:failerHandler];
@@ -138,11 +100,11 @@
     [self requestWithURL:[request url] method:[request method] parameters:[(NSObject *)request toDictionary] response:clsss success:success failure:failure];
 }
 
--(void)sendRequest:(id<RequestProtocol>)request response:(void(^)(BOOL result, NSString *errMsg))response{
+-(void)sendRequest:(id<RequestProtocol>)request response:(void(^)(NSString *errMsg))response{
     [self reqeust:request response:nil success:^(id responseObject) {
-        response(YES, nil);
+        response(nil);
     } failure:^(NSInteger code, NSString *errMsg) {
-        response(NO, errMsg);
+        response(errMsg);
     }];
 }
 

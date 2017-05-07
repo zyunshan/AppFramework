@@ -26,7 +26,7 @@
         self.backgroundColor = [UIColor blackColor];
         
         CGSize size = image.size;
-        CGFloat maxWidth = km_screen_width;
+        CGFloat maxWidth = cs_screen_width;
         CGFloat maxHeight = [UIScreen mainScreen].bounds.size.height;
         CGFloat minscale = MIN(maxWidth/size.width, maxHeight/size.height);
         CGFloat maxscale = MAX(maxWidth/size.width, maxHeight/size.height);
