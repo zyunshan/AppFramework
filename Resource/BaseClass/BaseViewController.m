@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "NavigationView.h"
+#import "BaseNavigationController.h"
 
 @interface BaseViewController ()
 
@@ -55,19 +56,57 @@
     // Pass the selected object to the new view controller.
 }
 */
--(id)push:(NSString *)className withParams:(NSDictionary *)params{
+-(id)push:(NSString *)className params:(NSDictionary *)params{
+     return [self push:className params:params animated:YES];
+}
+
+-(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated{
     Class clss = NSClassFromString(className);
-    if ([clss isSubclassOfClass:self.superclass]) {
+    if ([clss isSubclassOfClass:[UIViewController class]]) {
         id viewController = [[clss alloc]init];
         for (NSString *key in params.allKeys) {
             [viewController setValue:params[key] forKey:key];
         }
-        [viewController setObject:params forKey:params];
-        [self.navigationController pushViewController:viewController animated:YES];
+        [viewController setValue:@YES forKey:@"hidesBottomBarWhenPushed"];
+        [self.navigationController pushViewController:viewController animated:animated];
         return viewController;
-    }else{
-        NSLog(@"%@---%@", NSStringFromSelector(_cmd), className);
     }
     return nil;
 }
+
+-(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated{
+    Class clss = NSClassFromString(className);
+    if ([clss isSubclassOfClass:[UIViewController class]]) {
+        id viewController = [[clss alloc]init];
+        for (NSString *key in params.allKeys) {
+            [viewController setValue:params[key] forKey:key];
+        }
+        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:viewController];
+        [self presentViewController:nav animated:animated completion:nil];
+        return viewController;
+    }
+    return nil;
+}
+
+-(id)show:(NSString *)className animated:(BOOL)animated{
+    Class clss = NSClassFromString(className);
+    if ([clss isSubclassOfClass:[UIViewController class]]) {
+        id viewController = [[clss alloc]init];
+        [viewController setValue:@(UIModalPresentationOverFullScreen) forKey:@"modalPresentationStyle"];
+        [self presentViewController:viewController animated:animated completion:nil];
+        return viewController;
+    }
+    return nil;
+}
+-(id)popToViewController:(NSString *)className animated:(BOOL)animated{
+    NSArray *viewControllers = self.navigationController.viewControllers;
+    for (UIViewController *viewController in viewControllers) {
+        if ([viewController isKindOfClass:NSClassFromString(className)]) {
+            [self.navigationController popToViewController:viewController animated:animated];
+            return viewController;
+        }
+    }
+    return nil;
+}
+
 @end

@@ -16,5 +16,21 @@
 
 -(void)updateCellWithModel:(id)model;
 
-+(CGFloat)rowHeight;
++(CGFloat)rowHeightWithModel:(id)model;
+
++(NSDictionary *)atributes;
+
+/**
+ 多选选择效果处理
+ */
+-(void)multipleSelected:(BOOL)selected;
+
+/**
+ 计算文字高度
+
+ @param content 文字内容
+ @param size 文字显示大小
+ @return 自适应大小
+ */
++(CGFloat )heightWithContent:(NSString *)content inSize:(CGSize)size;
 @end

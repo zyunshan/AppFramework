@@ -22,10 +22,42 @@
 }
 
 -(void)updateCellWithModel:(id)model{
+    self.model = model;
+}
+
++(CGFloat)rowHeightWithModel:(id)model{
+    return 44;
+}
+
+-(void)updateUIWithStyle:(NSInteger)style{
 
 }
 
-+(CGFloat)rowHeight{
+/**
+ 文字属性
+ */
++(NSDictionary *)atributes{
+    NSMutableParagraphStyle *para = [[NSMutableParagraphStyle alloc]init];
+    para.lineSpacing = 4;
+    return @{NSFontAttributeName : [UIFont systemFontOfSize:16],
+             NSParagraphStyleAttributeName : para};
+}
+
++(CGFloat )heightWithContent:(NSString *)content inSize:(CGSize)size{
     return 44;
+}
+-(void)multipleSelected:(BOOL)selected{
+    for (UIView *view in self.subviews) {
+        if ([view isKindOfClass:NSClassFromString(@"UITableViewCellEditControl")]) {
+            UIImageView *imageView = [view valueForKey:@"imageView"];
+            if (imageView) {
+                if (selected) {
+                  imageView.image = [UIImage imageNamed:@"home_message_choose"];
+                }else{
+                    imageView.image = [UIImage imageNamed:@"home_message_choose_no"];
+                }
+            }
+        }
+    }
 }
 @end

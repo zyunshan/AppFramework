@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BaseTableViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
+@interface BaseTableViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 
