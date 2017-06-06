@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 tokee. All rights reserved.
 //
 
-#import "NSDate+Custom.h"
+#import "NSDate+custom.h"
 
 // Thanks, AshFurrow
 static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfYear |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal);
 
 
-@implementation NSDate (Custom)
+@implementation NSDate (custom)
 
 // resolve iOS7/8 crash issues http://stackoverflow.com/questions/24624137/ios-nscalendar-crash-references-issue
 + (NSCalendar *) currentCalendar
@@ -490,4 +490,20 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return components.year;
 }
 
++(NSDate *)dateFromTime:(NSString *)time dateFormat:(NSString *)dateFormat{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = dateFormat;
+    NSDate *date= [formatter dateFromString:time];
+    return date;
+}
+
+-(NSString *)timeDescription{
+    if (self.isTomorrow) {
+        return @"昨天";
+    }
+    if ([self isToday]) {
+        return self.shortTimeString;
+    }
+    return self.shortDateString;
+}
 @end

@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavigationView.h"
 
 @interface BaseViewController : UIViewController
 
+@property (nonatomic, strong) NavigationView *navigationView;
+
+
+/**
+ 是否显示返回按钮 默认 YES
+ */
+@property (nonatomic, assign) BOOL isShowBackBtn;
 /**
  可作为用于传递参数 或者用于存放网络请求参数
  */

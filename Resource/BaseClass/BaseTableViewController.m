@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
     NSInteger bottomMargin = 49;
-    if (self.hidesBottomBarWhenPushed) {
+    if (self.tabBarController == nil || self.hidesBottomBarWhenPushed) {
         bottomMargin = 0;
     }
     [self.view addSubview:self.tableView];
@@ -38,6 +38,23 @@
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(-bottomMargin);
     }];
+    [self configData];
+    [self configTableView];
+}
+
+/**
+ 配置显示数据
+ */
+-(void)configData{
+    
+}
+
+/**
+ 配置 tableView
+ */
+-(void)configTableView{
+    
+    
 }
 
 -(NSMutableArray *)dataSource{
@@ -71,6 +88,15 @@
 }
 
 #pragma mark - 自定义方法
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.1f;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1f;
+}
+
 -(void)registerClass:(Class)cellClass forModelClass:(Class)modelClass{
     UINib *nib = [UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil];
     if (nib) {

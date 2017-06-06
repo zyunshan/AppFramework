@@ -7,12 +7,10 @@
 //
 
 #import "BaseViewController.h"
-#import "NavigationView.h"
 #import "BaseNavigationController.h"
 
 @interface BaseViewController ()
 
-@property (nonatomic, strong) NavigationView *navigationView;
 @end
 
 @implementation BaseViewController
@@ -27,8 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBarHidden = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.navigationView];
-    
+    [self setIsShowBackBtn:YES];
 }
 
 -(NavigationView *)navigationView{
@@ -36,6 +36,15 @@
         _navigationView = [[NavigationView alloc]initWithFrame:CGRectMake(0, 0, cs_screen_width, cs_nav_height)];
     }
     return _navigationView;
+}
+
+-(void)setIsShowBackBtn:(BOOL)isShowBackBtn{
+    if (isShowBackBtn) {
+        __block typeof(self) weakSelf = self;
+        [self.navigationView addItemWithTitle:[UIImage imageNamed:@"nav_back"] position:NavItemPostionLeft margin:0 width:0 block:^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

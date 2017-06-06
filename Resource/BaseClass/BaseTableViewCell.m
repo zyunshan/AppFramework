@@ -29,10 +29,6 @@
     return 44;
 }
 
--(void)updateUIWithStyle:(NSInteger)style{
-
-}
-
 /**
  文字属性
  */

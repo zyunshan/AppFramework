@@ -49,5 +49,5 @@ typedef NS_ENUM(NSInteger, NavItemPostion) {
  @param width 按钮的宽度 若为0 则自适应宽度
  @param block 点击事件回调
  */
--(void)addItemWithTitle:(NSString *)title position:(NavItemPostion)postion margin:(CGFloat)margin width:(CGFloat)width block:(void (^)())block;
+-(void)addItemWithTitle:(id)title position:(NavItemPostion)postion margin:(CGFloat)margin width:(CGFloat)width block:(void (^)())block;
 @end
