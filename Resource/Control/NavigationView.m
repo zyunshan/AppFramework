@@ -72,14 +72,14 @@
 -(UIView *)bottomLineView{
     if (!_bottomLineView) {
         _bottomLineView = [UIView new];
-        _bottomLineView.backgroundColor = [UIColor redColor];
+        _bottomLineView.backgroundColor = ColorFromHex(0xDDDDDD);
     }
     return _bottomLineView;
 }
 
 -(void)loadUI{
-    [self.titleView addSubview:self.titleLabel];
     [self addSubview:self.titleView];
+    [self.titleView addSubview:self.titleLabel];
     [self addSubview:self.bottomLineView];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.bottom.right.mas_equalTo(0);
@@ -186,9 +186,9 @@
         }];
     }
     self.lastRightItem = button;
-    [self.titleView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.right.greaterThanOrEqualTo(self.lastLeftItem.mas_left).offset(5);
-    }];
+//    [self.titleView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.right.greaterThanOrEqualTo(self.lastLeftItem.mas_left).offset(5);
+//    }];
     [self.rightItems addObject:button];
 }
 

@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "UpdateManager.h"
-#import "DBManager.h"
-#import "DBTool.h"
+#import "ViewController.h"
+#import "BaseNavigationController.h"
+#import "TouchIDTool.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +20,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    ViewController *vc = [ViewController new];
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

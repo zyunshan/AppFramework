@@ -14,7 +14,7 @@
 #define D_WEEK		604800
 #define D_YEAR		31556926
 
-@interface NSDate (Custom)
+@interface NSDate (custom)
 
 + (NSCalendar *) currentCalendar; // avoid bottlenecks
 
@@ -110,4 +110,7 @@
 @property (readonly) NSInteger nthWeekday; // e.g. 2nd Tuesday of the month == 2
 @property (readonly) NSInteger year;
 
++(NSDate *)dateFromTime:(NSString *)time dateFormat:(NSString *)dateFormat;
+
+-(NSString *)timeDescription;
 @end
