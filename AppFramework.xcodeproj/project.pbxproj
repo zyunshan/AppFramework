@@ -34,6 +34,7 @@
 		7E1975F61E94B95500954869 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1975F31E94B95500954869 /* UserData.m */; };
 		7E1976391E94DD3500954869 /* AudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1976381E94DD3500954869 /* AudioTool.m */; };
 		7E19763B1E94E38800954869 /* local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E19763A1E94E38800954869 /* local@2x.png */; };
+		7E1D28721EE8362F0088095C /* VideoToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D28711EE8362F0088095C /* VideoToolView.m */; };
 		7E39FBED1E8F92C900E5029D /* IMGScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */; };
 		7E420DB41EE571C3005BFB83 /* IMConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E420DB31EE571C3005BFB83 /* IMConversationViewController.m */; };
 		7E420DBA1EE573C2005BFB83 /* IMMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E420DB91EE573C2005BFB83 /* IMMessageBaseCell.m */; };
@@ -137,6 +138,8 @@
 		7E1976371E94DD3500954869 /* AudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioTool.h; path = AudioTool/AudioTool.h; sourceTree = "<group>"; };
 		7E1976381E94DD3500954869 /* AudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioTool.m; path = AudioTool/AudioTool.m; sourceTree = "<group>"; };
 		7E19763A1E94E38800954869 /* local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "local@2x.png"; sourceTree = "<group>"; };
+		7E1D28701EE8362F0088095C /* VideoToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoToolView.h; sourceTree = "<group>"; };
+		7E1D28711EE8362F0088095C /* VideoToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoToolView.m; sourceTree = "<group>"; };
 		7E39FBEA1E8F8DC200E5029D /* AppDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefine.h; sourceTree = "<group>"; };
 		7E39FBEB1E8F92C900E5029D /* IMGScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGScaleView.h; sourceTree = "<group>"; };
 		7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGScaleView.m; sourceTree = "<group>"; };
@@ -501,6 +504,8 @@
 			children = (
 				7EF44CF51EE6B86900EEDD1E /* VideoPlayerView.h */,
 				7EF44CF61EE6B86900EEDD1E /* VideoPlayerView.m */,
+				7E1D28701EE8362F0088095C /* VideoToolView.h */,
+				7E1D28711EE8362F0088095C /* VideoToolView.m */,
 			);
 			path = VideoKit;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				7EF44CF71EE6B86900EEDD1E /* VideoPlayerView.m in Sources */,
 				523E4AC51E670C8D00573BA0 /* Request.m in Sources */,
 				7EF44CF31EE6B47C00EEDD1E /* DemoTestViewController.m in Sources */,
+				7E1D28721EE8362F0088095C /* VideoToolView.m in Sources */,
 				7EF9D1D71EE67C76004495C9 /* DemoTableViewCell.m in Sources */,
 				7E39FBED1E8F92C900E5029D /* IMGScaleView.m in Sources */,
 				7E1975F51E94B95500954869 /* UpdateManager.m in Sources */,
