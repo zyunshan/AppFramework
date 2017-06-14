@@ -18,6 +18,9 @@
 
 +(CGFloat)rowHeightWithModel:(id)model;
 
+/**
+ 多行文字排版属性
+ */
 +(NSDictionary *)atributes;
 
 /**

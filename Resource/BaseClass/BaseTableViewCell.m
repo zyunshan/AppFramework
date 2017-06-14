@@ -40,8 +40,14 @@
 }
 
 +(CGFloat )heightWithContent:(NSString *)content inSize:(CGSize)size{
-    return 44;
+    if (validateEmpty(content)) {
+        return 0;
+    }
+    CGSize contentSize = [content boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:[self atributes] context:NULL].size;
+    return contentSize.height;
 }
+
+
 -(void)multipleSelected:(BOOL)selected{
     for (UIView *view in self.subviews) {
         if ([view isKindOfClass:NSClassFromString(@"UITableViewCellEditControl")]) {

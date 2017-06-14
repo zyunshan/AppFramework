@@ -31,4 +31,5 @@ BOOL validateNickName(NSString *nickName);
 //身份证号
 BOOL validateIdentityCard(NSString *identityCard);
 
+BOOL validateEmpty(NSString *text);
 @end

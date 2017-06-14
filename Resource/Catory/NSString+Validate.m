@@ -64,5 +64,13 @@ BOOL validateIdentityCard(NSString *identityCard){
     return [identityCardPredicate evaluateWithObject:identityCard];
 }
 
-
+BOOL validateEmpty(NSString *text){
+    if (text == nil) {
+        return YES;
+    }
+    if (text.length < 1) {
+        return YES;
+    }
+    return NO;
+}
 @end
