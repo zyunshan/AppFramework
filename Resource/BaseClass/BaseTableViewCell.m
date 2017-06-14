@@ -42,6 +42,10 @@
              NSParagraphStyleAttributeName : para};
 }
 
++(CGFloat)rowHeightWithModel:(id)model{
+    return 44;
+}
+
 +(CGFloat )heightWithContent:(NSString *)content inSize:(CGSize)size{
     if (validateEmpty(content)) {
         return 0;

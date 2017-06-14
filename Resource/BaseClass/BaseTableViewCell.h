@@ -16,7 +16,7 @@
 
 -(void)updateCellWithModel:(id)model;
 
-+(CGFloat)rowHeight;
++(CGFloat)rowHeightWithModel:(id)model;
 
 /**
  多行文字排版属性
