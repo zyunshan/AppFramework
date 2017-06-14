@@ -79,6 +79,6 @@
 }
 
 -(void)videoPlayer{
-    [self push:@"DemoTestViewController" params:@{@"type": @1}];
+    
 }
 @end

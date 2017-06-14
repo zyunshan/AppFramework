@@ -28,7 +28,7 @@
  
     __block typeof(self) weakSelf = self;
     [self.navigationView addItemWithTitle:@"demo" position:1 margin:-10 width:50 block:^{
-        [weakSelf push:@"DemoViewController" params:nil animated:YES];
+        [weakSelf push:@"DemoViewController" params:nil animated:YES callback:nil];
     }];
 }
 

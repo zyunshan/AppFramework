@@ -26,14 +26,33 @@
 /**
  用于回调传递参数
  */
-@property (copy, nonatomic) void (^callback)(id value1, id value2);
+@property (copy, nonatomic) void (^callback)(id value, ...);
 
 
 /**
  从nib加载viewController
-
- @param className nib对应的viewcontroller 雷明
- @return viewController
  */
--(id)loadNibViewControllerWithClassName:(NSString *)className;
+-(id)loadNibVCWithClassName:(NSString *)className;
+
+/**
+ viewController 之间push 方式跳转
+ */
+-(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback;
+
+/**
+ viewController 之间 present 方式跳转
+ */
+-(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback;
+
+
+/**
+ 自定义 alertController
+ */
+-(id)show:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback;
+
+/**
+ 返回到指定类型的 viewController
+ */
+-(id)popToViewController:(NSString *)className animated:(BOOL)animated;
+
 @end

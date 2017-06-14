@@ -65,7 +65,7 @@
     // Pass the selected object to the new view controller.
 }
 */
--(id)loadNibViewControllerWithClassName:(NSString *)className{
+-(id)loadNibVCWithClassName:(NSString *)className{
     Class clss = NSClassFromString(className);
     if ([clss isSubclassOfClass:[UIViewController class]]) {
         id viewController = [[clss alloc]initWithNibName:className bundle:nil];
@@ -74,13 +74,29 @@
     return nil;
 }
 
--(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated{
+-(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback{
     Class clss = NSClassFromString(className);
     if ([clss isSubclassOfClass:[UIViewController class]]) {
-        id viewController = [[clss alloc]init];
+        BaseViewController *viewController = [[clss alloc]init];
         for (NSString *key in params.allKeys) {
             [viewController setValue:params[key] forKey:key];
         }
+        [viewController setValue:@YES forKey:@"hidesBottomBarWhenPushed"];
+        viewController.callback = callback;
+        [self.navigationController pushViewController:viewController animated:animated];
+        return viewController;
+    }
+    return nil;
+}
+
+-(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback{
+    Class clss = NSClassFromString(className);
+    if ([clss isSubclassOfClass:[UIViewController class]]) {
+        BaseViewController *viewController = [[clss alloc]init];
+        for (NSString *key in params.allKeys) {
+            [viewController setValue:params[key] forKey:key];
+        }
+        viewController.callback = callback;
         BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:viewController];
         [self presentViewController:nav animated:animated completion:nil];
         return viewController;
@@ -88,12 +104,16 @@
     return nil;
 }
 
--(id)show:(NSString *)className animated:(BOOL)animated{
+-(id)show:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value , ...))callback{
     Class clss = NSClassFromString(className);
-    if ([clss isSubclassOfClass:[UIViewController class]]) {
-        id viewController = [[clss alloc]init];
+    if ([clss isSubclassOfClass:[BaseViewController class]]) {
+        BaseViewController * viewController = [[clss alloc]init];
+        for (NSString *key in params.allKeys) {
+            [viewController setValue:params[key] forKey:key];
+        }
         [viewController setValue:@(UIModalPresentationOverFullScreen) forKey:@"modalPresentationStyle"];
         [self presentViewController:viewController animated:animated completion:nil];
+        viewController.callback = callback;
         return viewController;
     }
     return nil;
