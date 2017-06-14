@@ -10,9 +10,16 @@
 
 @implementation BaseTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+-(instancetype)initWithReuseIndentifier:(NSString *)indentifier{
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
+    if (self) {
+        
+    }
+    return self;
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,10 +30,6 @@
 
 -(void)updateCellWithModel:(id)model{
     self.model = model;
-}
-
-+(CGFloat)rowHeightWithModel:(id)model{
-    return 44;
 }
 
 /**

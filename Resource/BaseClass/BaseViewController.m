@@ -65,19 +65,10 @@
     // Pass the selected object to the new view controller.
 }
 */
--(id)push:(NSString *)className params:(NSDictionary *)params{
-     return [self push:className params:params animated:YES];
-}
-
--(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated{
+-(id)loadNibViewControllerWithClassName:(NSString *)className{
     Class clss = NSClassFromString(className);
     if ([clss isSubclassOfClass:[UIViewController class]]) {
-        id viewController = [[clss alloc]init];
-        for (NSString *key in params.allKeys) {
-            [viewController setValue:params[key] forKey:key];
-        }
-        [viewController setValue:@YES forKey:@"hidesBottomBarWhenPushed"];
-        [self.navigationController pushViewController:viewController animated:animated];
+        id viewController = [[clss alloc]initWithNibName:className bundle:nil];
         return viewController;
     }
     return nil;

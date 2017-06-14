@@ -46,9 +46,7 @@
 /**
  *  上传图片
  *
- *  @param req     <#req description#>
- *  @param success <#success description#>
- *  @param failure <#failure description#>
+ *  @param req     遵循协议的请求对象
  */
 -(void)uploadReq:(id<UpdateImageProtocol, RequestProtocol>)req success:(void(^)(id responseObject))success failure:(void(^)(NSString *errMsg))failure;
 
@@ -56,12 +54,6 @@
 /**
  *  上传图片
  *
- *  @param url        <#url description#>
- *  @param imgDatas   <#imgDatas description#>
- *  @param parameters <#parameters description#>
- *  @param fileName   <#fileName description#>
- *  @param success    <#success description#>
- *  @param failure    <#failure description#>
  */
 -(void)uploadImageWithURL:(NSString *)url imgData:(NSMutableArray *)imgDatas parameters:(id)parameters fileName:(NSString *)fileName success:(void(^)(id response))success failure:(void(^)(NSError *error))failure;
 
@@ -74,8 +66,6 @@
  *  @param url        请求地址
  *  @param method     请求方式
  *  @param parameters 参数
- *  @param success    成功回调
- *  @param failure    失败回调
  */
 -(void)requestWithURL:(NSString *)url method:(NSString *)method parameters:(id)parameters success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
 
@@ -84,28 +74,18 @@
  *
  *  @param request 请求对象
  *  @param clsss   返回对象类型
- *  @param success 成功回调
- *  @param failure 失败回调
  */
 -(void)reqeust:(id<RequestProtocol>)request response:(Class)clsss success:(void(^)(id responseObject))success failure:(void(^)(NSInteger code, NSString *errMsg))failure;
 
 /**
- *  <#Description#>
+ *  发送请求
  *
- *  @param request  <#request description#>
- *  @param response <#response description#>
  */
 -(void)sendRequest:(id<RequestProtocol>)request response:(void(^)(NSString *errMsg))response;
 
 /**
  *  自定义请求
  *
- *  @param url        <#url description#>
- *  @param method     <#method description#>
- *  @param parameters <#parameters description#>
- *  @param clsss      <#clsss description#>
- *  @param success    <#success description#>
- *  @param failure    <#failure description#>
  */
 -(void)requestWithURL:(NSString *)url method:(NSString *)method parameters:(id)parameters response:(Class)clsss success:(void(^)(id responseObject))success failure:(void(^)(NSInteger code, NSString *errMsg))failure;
 
