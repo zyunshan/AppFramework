@@ -13,6 +13,8 @@
 #define POST     @"POST"
 #define GET      @"GET"
 
+typedef void(^ReqResponse)(id value, ...);
+
 @protocol UpdateImageProtocol <NSObject>
 
 - (NSMutableArray*)data;
