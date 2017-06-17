@@ -35,6 +35,7 @@
 		7E1976391E94DD3500954869 /* AudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1976381E94DD3500954869 /* AudioTool.m */; };
 		7E19763B1E94E38800954869 /* local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E19763A1E94E38800954869 /* local@2x.png */; };
 		7E1D28721EE8362F0088095C /* VideoToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D28711EE8362F0088095C /* VideoToolView.m */; };
+		7E2CE6871EF502CE0092EDC5 /* VideoKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E2CE6861EF502CE0092EDC5 /* VideoKit.bundle */; };
 		7E39FBED1E8F92C900E5029D /* IMGScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */; };
 		7E420DB41EE571C3005BFB83 /* IMConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E420DB31EE571C3005BFB83 /* IMConversationViewController.m */; };
 		7E420DBA1EE573C2005BFB83 /* IMMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E420DB91EE573C2005BFB83 /* IMMessageBaseCell.m */; };
@@ -140,6 +141,7 @@
 		7E19763A1E94E38800954869 /* local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "local@2x.png"; sourceTree = "<group>"; };
 		7E1D28701EE8362F0088095C /* VideoToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoToolView.h; sourceTree = "<group>"; };
 		7E1D28711EE8362F0088095C /* VideoToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoToolView.m; sourceTree = "<group>"; };
+		7E2CE6861EF502CE0092EDC5 /* VideoKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VideoKit.bundle; sourceTree = "<group>"; };
 		7E39FBEA1E8F8DC200E5029D /* AppDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefine.h; sourceTree = "<group>"; };
 		7E39FBEB1E8F92C900E5029D /* IMGScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGScaleView.h; sourceTree = "<group>"; };
 		7E39FBEC1E8F92C900E5029D /* IMGScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGScaleView.m; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		7EF44CF41EE6B86900EEDD1E /* VideoKit */ = {
 			isa = PBXGroup;
 			children = (
+				7E2CE6861EF502CE0092EDC5 /* VideoKit.bundle */,
 				7EF44CF51EE6B86900EEDD1E /* VideoPlayerView.h */,
 				7EF44CF61EE6B86900EEDD1E /* VideoPlayerView.m */,
 				7E1D28701EE8362F0088095C /* VideoToolView.h */,
@@ -650,6 +653,7 @@
 				7E1742BC1E615447002C2C6D /* LaunchScreen.storyboard in Resources */,
 				7E19763B1E94E38800954869 /* local@2x.png in Resources */,
 				7E1742B91E615447002C2C6D /* Assets.xcassets in Resources */,
+				7E2CE6871EF502CE0092EDC5 /* VideoKit.bundle in Resources */,
 				7E5804E21E9613B800D5DAF7 /* test.mp3 in Resources */,
 				7E0CF9C81EADFFE200102CDB /* test.gif in Resources */,
 				7EF9D1D91EE67C84004495C9 /* DemoTableViewCell.xib in Resources */,

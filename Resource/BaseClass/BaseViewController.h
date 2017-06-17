@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NavigationView.h"
 
+typedef void(^Callback)(id);
+
 @interface BaseViewController : UIViewController
 
 @property (nonatomic, strong) NavigationView *navigationView;
@@ -26,7 +28,7 @@
 /**
  用于回调传递参数
  */
-@property (copy, nonatomic) void (^callback)(id value, ...);
+@property (copy, nonatomic) Callback callback;
 
 
 /**
@@ -37,18 +39,18 @@
 /**
  viewController 之间push 方式跳转
  */
--(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback;
+-(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(Callback)callback;
 
 /**
  viewController 之间 present 方式跳转
  */
--(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback;
+-(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(Callback)callback;
 
 
 /**
  自定义 alertController
  */
--(id)show:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback;
+-(id)show:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(Callback)callback;
 
 /**
  返回到指定类型的 viewController

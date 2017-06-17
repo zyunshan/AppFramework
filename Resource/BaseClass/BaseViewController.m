@@ -74,49 +74,27 @@
     return nil;
 }
 
--(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback{
+-(id)push:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(Callback)callback{
     Class clss = NSClassFromString(className);
-    if ([clss isSubclassOfClass:[UIViewController class]]) {
-        BaseViewController *viewController = [[clss alloc]init];
-        for (NSString *key in params.allKeys) {
-            [viewController setValue:params[key] forKey:key];
-        }
-        [viewController setValue:@YES forKey:@"hidesBottomBarWhenPushed"];
-        viewController.callback = callback;
-        [self.navigationController pushViewController:viewController animated:animated];
-        return viewController;
-    }
+    BaseViewController *viewController = [self VCWithClass:clss params:params callback:callback];
+    [self.navigationController pushViewController:viewController animated:animated];
     return nil;
 }
 
--(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value, ...))callback{
+-(id)present:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(Callback)callback{
     Class clss = NSClassFromString(className);
-    if ([clss isSubclassOfClass:[UIViewController class]]) {
-        BaseViewController *viewController = [[clss alloc]init];
-        for (NSString *key in params.allKeys) {
-            [viewController setValue:params[key] forKey:key];
-        }
-        viewController.callback = callback;
-        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:viewController];
-        [self presentViewController:nav animated:animated completion:nil];
-        return viewController;
-    }
-    return nil;
+    BaseViewController *viewController = [self VCWithClass:clss params:params callback:callback];
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:viewController];
+    [self presentViewController:nav animated:animated completion:nil];
+    return viewController;
 }
 
--(id)show:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(void (^)(id value , ...))callback{
+-(id)show:(NSString *)className params:(NSDictionary *)params animated:(BOOL)animated callback:(Callback)callback{
     Class clss = NSClassFromString(className);
-    if ([clss isSubclassOfClass:[BaseViewController class]]) {
-        BaseViewController * viewController = [[clss alloc]init];
-        for (NSString *key in params.allKeys) {
-            [viewController setValue:params[key] forKey:key];
-        }
-        [viewController setValue:@(UIModalPresentationOverFullScreen) forKey:@"modalPresentationStyle"];
-        [self presentViewController:viewController animated:animated completion:nil];
-        viewController.callback = callback;
-        return viewController;
-    }
-    return nil;
+    BaseViewController *viewController = [self VCWithClass:clss params:params callback:callback];
+    [viewController setValue:@(UIModalPresentationOverFullScreen) forKey:@"modalPresentationStyle"];
+    [self presentViewController:viewController animated:animated completion:nil];
+    return viewController;
 }
 -(id)popToViewController:(NSString *)className animated:(BOOL)animated{
     NSArray *viewControllers = self.navigationController.viewControllers;
@@ -129,4 +107,15 @@
     return nil;
 }
 
+-(id)VCWithClass:(Class)clss params:(NSDictionary *)params callback:(Callback)callback{
+    if ([clss isSubclassOfClass:[BaseViewController class]]) {
+        BaseViewController * viewController = [[clss alloc]init];
+        for (NSString *key in params.allKeys) {
+            [viewController setValue:params[key] forKey:key];
+        }
+        viewController.callback = callback;
+        return viewController;
+    }
+    return nil;
+}
 @end
