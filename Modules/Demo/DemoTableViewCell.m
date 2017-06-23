@@ -10,6 +10,11 @@
 
 @implementation DemoTableViewCell
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    
+}
+
 -(void)updateCellWithModel:(DemoListModel *)model{
     self.labelTitle.text = model.title;
 }

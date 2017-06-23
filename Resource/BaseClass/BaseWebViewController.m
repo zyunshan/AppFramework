@@ -7,13 +7,11 @@
 //
 
 #import "BaseWebViewController.h"
-#import <WebKit/WebKit.h>
 
 @interface BaseWebViewController ()<WKNavigationDelegate>
 
 @property (nonatomic, strong) UIProgressView *progressView;
 
-@property (nonatomic, strong) WKWebView *webView;
 
 @end
 
@@ -22,8 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
-    [self.webView addSubview:self.webView];
+    
+    if (self.url) {
+        NSURL *url = [NSURL URLWithString:self.url];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [self.webView loadRequest:request];
+    }
 }
 
 -(UIProgressView *)progressView{
@@ -41,10 +45,16 @@
     return [UIColor redColor];
 }
 
+-(WKWebViewConfiguration *)configuration{
+    if (!_configuration) {
+        _configuration = [[WKWebViewConfiguration alloc]init];
+    }
+    return _configuration;
+}
+
 -(WKWebView *)webView{
     if (!_webView) {
-        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc]init];
-        _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, cs_nav_height, cs_screen_width, cs_screen_height-cs_nav_height) configuration:configuration];
+        _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, cs_nav_height, cs_screen_width, cs_screen_height-cs_nav_height) configuration:self.configuration];
         //添加加载进度监听
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew| NSKeyValueObservingOptionOld context:nil];
     }

@@ -10,6 +10,9 @@
 		523E4ABE1E670A0A00573BA0 /* AFNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 523E4ABD1E670A0A00573BA0 /* AFNetworkHelper.m */; };
 		523E4AC21E670BB800573BA0 /* NSObject+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 523E4AC11E670BB800573BA0 /* NSObject+Parser.m */; };
 		523E4AC51E670C8D00573BA0 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 523E4AC41E670C8D00573BA0 /* Request.m */; };
+		7E04949E1EFBB56A001CE8D4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E04949D1EFBB56A001CE8D4 /* WebViewController.m */; };
+		7E0494A01EFBB88F001CE8D4 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E04949F1EFBB88F001CE8D4 /* WebViewController.xib */; };
+		7E0494A41EFBC487001CE8D4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7E0494A31EFBC487001CE8D4 /* index.html */; };
 		7E09DA351EDFF21200137D5B /* SKPaymetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E09DA341EDFF21200137D5B /* SKPaymetManager.m */; };
 		7E0B34281EA60B740036B45F /* ConfigDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B34271EA60B740036B45F /* ConfigDefine.m */; };
 		7E0CF9C61EADF62900102CDB /* UIImage+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CF9C51EADF62900102CDB /* UIImage+Custom.m */; };
@@ -50,6 +53,11 @@
 		7EDC1AB01EAEEA6400516756 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC1AAD1EAEEA6400516756 /* NSString+MD5.m */; };
 		7EDC1AB11EAEEA6400516756 /* NSString+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC1AAF1EAEEA6400516756 /* NSString+Validate.m */; };
 		7EE02BA01ED689E50097A0F5 /* MKQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE02B9F1ED689E50097A0F5 /* MKQRCode.m */; };
+		7EED04701EFA75270092AD9B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EED046D1EFA75270092AD9B /* 1.jpg */; };
+		7EED04711EFA75270092AD9B /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EED046E1EFA75270092AD9B /* 2.jpg */; };
+		7EED04721EFA75270092AD9B /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EED046F1EFA75270092AD9B /* 3.jpg */; };
+		7EED04791EFA7B9D0092AD9B /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EED04771EFA7B9D0092AD9B /* logo@2x.png */; };
+		7EED047A1EFA7B9D0092AD9B /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EED04781EFA7B9D0092AD9B /* logo@3x.png */; };
 		7EF44CE71EE6941A00EEDD1E /* UIView+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF44CE61EE6941A00EEDD1E /* UIView+custom.m */; };
 		7EF44CEB1EE6A0D300EEDD1E /* TouchIDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF44CEA1EE6A0D300EEDD1E /* TouchIDTool.m */; };
 		7EF44CF31EE6B47C00EEDD1E /* DemoTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF44CF21EE6B47C00EEDD1E /* DemoTestViewController.m */; };
@@ -90,6 +98,10 @@
 		523E4AC31E670C8D00573BA0 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		523E4AC41E670C8D00573BA0 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		5E21BB5C437355B117ED1887 /* libPods-AppFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E04949C1EFBB56A001CE8D4 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		7E04949D1EFBB56A001CE8D4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		7E04949F1EFBB88F001CE8D4 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		7E0494A31EFBC487001CE8D4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		7E09DA331EDFF21200137D5B /* SKPaymetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPaymetManager.h; sourceTree = "<group>"; };
 		7E09DA341EDFF21200137D5B /* SKPaymetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPaymetManager.m; sourceTree = "<group>"; };
 		7E0B34261EA60B740036B45F /* ConfigDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigDefine.h; sourceTree = "<group>"; };
@@ -168,6 +180,11 @@
 		7EDC1AAF1EAEEA6400516756 /* NSString+Validate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validate.m"; sourceTree = "<group>"; };
 		7EE02B9E1ED689E50097A0F5 /* MKQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKQRCode.h; sourceTree = "<group>"; };
 		7EE02B9F1ED689E50097A0F5 /* MKQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQRCode.m; sourceTree = "<group>"; };
+		7EED046D1EFA75270092AD9B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		7EED046E1EFA75270092AD9B /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		7EED046F1EFA75270092AD9B /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		7EED04771EFA7B9D0092AD9B /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		7EED04781EFA7B9D0092AD9B /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
 		7EF44CE51EE6941A00EEDD1E /* UIView+custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+custom.h"; sourceTree = "<group>"; };
 		7EF44CE61EE6941A00EEDD1E /* UIView+custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+custom.m"; sourceTree = "<group>"; };
 		7EF44CE91EE6A0D300EEDD1E /* TouchIDTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchIDTool.h; sourceTree = "<group>"; };
@@ -291,6 +308,11 @@
 		7E1743111E61591E002C2C6D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				7EED04771EFA7B9D0092AD9B /* logo@2x.png */,
+				7EED04781EFA7B9D0092AD9B /* logo@3x.png */,
+				7EED046D1EFA75270092AD9B /* 1.jpg */,
+				7EED046E1EFA75270092AD9B /* 2.jpg */,
+				7EED046F1EFA75270092AD9B /* 3.jpg */,
 				7EF44CF91EE6C0F000EEDD1E /* test.mp4 */,
 				7E0CF9C71EADFFE200102CDB /* test.gif */,
 				7E19763A1E94E38800954869 /* local@2x.png */,
@@ -512,6 +534,7 @@
 		7EF9D1D11EE67BFF004495C9 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7E0494A31EFBC487001CE8D4 /* index.html */,
 				7EF9D1D21EE67BFF004495C9 /* DemoViewController.h */,
 				7EF9D1D31EE67BFF004495C9 /* DemoViewController.m */,
 				7EF9D1D51EE67C76004495C9 /* DemoTableViewCell.h */,
@@ -519,6 +542,9 @@
 				7EF9D1D81EE67C84004495C9 /* DemoTableViewCell.xib */,
 				7EF44CF11EE6B47C00EEDD1E /* DemoTestViewController.h */,
 				7EF44CF21EE6B47C00EEDD1E /* DemoTestViewController.m */,
+				7E04949C1EFBB56A001CE8D4 /* WebViewController.h */,
+				7E04949D1EFBB56A001CE8D4 /* WebViewController.m */,
+				7E04949F1EFBB88F001CE8D4 /* WebViewController.xib */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -639,13 +665,20 @@
 				7ED6F6BA1E8E6E5B003BAE58 /* File.txt in Resources */,
 				7E1742BC1E615447002C2C6D /* LaunchScreen.storyboard in Resources */,
 				7E19763B1E94E38800954869 /* local@2x.png in Resources */,
+				7E0494A01EFBB88F001CE8D4 /* WebViewController.xib in Resources */,
 				7E1742B91E615447002C2C6D /* Assets.xcassets in Resources */,
+				7EED04721EFA75270092AD9B /* 3.jpg in Resources */,
 				7E2CE6871EF502CE0092EDC5 /* VideoKit.bundle in Resources */,
 				7E5804E21E9613B800D5DAF7 /* test.mp3 in Resources */,
+				7EED04791EFA7B9D0092AD9B /* logo@2x.png in Resources */,
 				7E0CF9C81EADFFE200102CDB /* test.gif in Resources */,
 				7EF9D1D91EE67C84004495C9 /* DemoTableViewCell.xib in Resources */,
+				7EED04711EFA75270092AD9B /* 2.jpg in Resources */,
+				7EED047A1EFA7B9D0092AD9B /* logo@3x.png in Resources */,
 				7EF44CFA1EE6C0F000EEDD1E /* test.mp4 in Resources */,
+				7EED04701EFA75270092AD9B /* 1.jpg in Resources */,
 				7E1742B71E615447002C2C6D /* Main.storyboard in Resources */,
+				7E0494A41EFBC487001CE8D4 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,6 +788,7 @@
 				523E4ABE1E670A0A00573BA0 /* AFNetworkHelper.m in Sources */,
 				7EDC1AA51EAED7CA00516756 /* NavigationView.m in Sources */,
 				7E420DBE1EE57536005BFB83 /* IMMessageModel.m in Sources */,
+				7E04949E1EFBB56A001CE8D4 /* WebViewController.m in Sources */,
 				7E1975F61E94B95500954869 /* UserData.m in Sources */,
 				7EE02BA01ED689E50097A0F5 /* MKQRCode.m in Sources */,
 				7E1743331E616274002C2C6D /* NSTimer+Custom.m in Sources */,

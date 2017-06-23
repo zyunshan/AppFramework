@@ -28,8 +28,13 @@
  */
 -(void)configData{
     DemoListModel *model = [DemoListModel new];
-    model.title = @"循环滚动视图";
-    model.method = @"cycleView";
+    model.title = @"UIActivityViewController";
+    model.method = @"activity";
+    [self.dataSource addObject:model];
+    
+    model = [DemoListModel new];
+    model.title = @"native + web";
+    model.method = @"native";
     [self.dataSource addObject:model];
     
     model = [DemoListModel new];
@@ -60,17 +65,39 @@
  */
 -(void)configTableView{
     [self registerClass:[DemoTableViewCell class] forModelClass:[DemoListModel class]];
+    self.tableView.separatorInset = UIEdgeInsetsZero;
 }
 
 
 /**
- 循环滚动视图
+ 微信分享
  */
--(void)cycleView{
+-(void)activity{
+    
+    
+    NSArray *activityItems = @[[UIImage imageNamed:@"1.jpg"],
+                               [UIImage imageNamed:@"2.jpg"],
+                               [UIImage imageNamed:@"3.jpg"]];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard,UIActivityTypeSaveToCameraRoll,UIActivityTypePrint];
+    [self presentViewController:activityVC animated:TRUE completion:nil];
     
 }
 
 -(void)touchID{
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    DemoTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    for (UIView *view in cell.subviews) {
+        if ([view isKindOfClass:NSClassFromString(@"_UITableViewCellSeparatorView")]) {
+            view.backgroundColor = [UIColor redColor];
+            CGRect rect = view.frame;
+            rect.size.height = 2;
+            view.frame = rect;
+            NSLog(@"%@", view);
+        }
+    }
+    
     [TouchIDTool authenticate:^{
         
     } error:^(NSString *errMsg) {
@@ -80,5 +107,24 @@
 
 -(void)videoPlayer{
     [self push:@"DemoTestViewController" params:@{@"type" : @1} animated:YES callback:nil];
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPat{
+    for (UIView *view in cell.subviews) {
+        if ([view isKindOfClass:NSClassFromString(@"_UITableViewCellSeparatorView")]) {
+            view.backgroundColor = [UIColor redColor];
+            CGRect rect = view.frame;
+            rect.size.height = 2;
+            view.frame = rect;
+        }
+    }
+}
+
+/**
+ js 交互
+ */
+-(void)native{
+    [self push:@"WebViewController" params:@{@"url": @"http://www.baidu.com"} animated:YES callback:^(id value) {
+        
+    }];
 }
 @end

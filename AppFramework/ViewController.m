@@ -13,11 +13,14 @@
 
 #import "AudioTool.h"
 #import "NavigationView.h"
-#import "CycleView.h"
 
 @interface ViewController ()
 
+{
+    UIWindow *alertWindwo;
+}
 @property (nonatomic, strong) AudioTool *tool;
+
 @end
 
 @implementation ViewController
@@ -27,9 +30,14 @@
     // Do any additional setup after loading the view, typically from a nib.
  
     __block typeof(self) weakSelf = self;
+    
     [self.navigationView addItemWithTitle:@"demo" position:1 margin:-10 width:50 block:^{
         [weakSelf push:@"DemoViewController" params:nil animated:YES callback:nil];
+
+        
     }];
+    
+ 
 }
 
 

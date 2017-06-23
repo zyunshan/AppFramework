@@ -10,6 +10,7 @@
 
 typedef NS_ENUM(NSInteger, DemoType) {
     DemoTypeVideo = 1,
+    DemoTypeActive = 2,
 };
 
 @interface DemoTestViewController : BaseViewController

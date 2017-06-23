@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) id model;
 
-@property (nonatomic, copy) void (^clickCallback)(NSInteger tag, id info);
+@property (nonatomic, copy) void (^callback)(NSInteger tag, id value);
 
 -(void)updateCellWithModel:(id)model;
 

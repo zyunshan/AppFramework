@@ -119,12 +119,7 @@
 #pragma mark - tableView 代理方法
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    id model;
-    if ([self.dataSource.firstObject isKindOfClass:[NSArray class]]) {
-        model = self.dataSource[indexPath.section][indexPath.row];
-    }else{
-        model = self.dataSource[indexPath.row];
-    }
+    id model = [self modelAtIndexPath:indexPath];
     NSString *className = [self.cellModelInfo objectForKey:NSStringFromClass([model class])];
     if (className == nil) {
         return 44;
@@ -147,12 +142,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    id model;
-    if ([self.dataSource.firstObject isKindOfClass:[NSArray class]]) {
-        model = self.dataSource[indexPath.section][indexPath.row];
-    }else{
-        model = self.dataSource[indexPath.row];
-    }
+    id model = [self modelAtIndexPath:indexPath];
     NSString *modelClass = NSStringFromClass([model class]);
     BaseTableViewCell *cell = (BaseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:[self.cellModelInfo objectForKey:modelClass]];
     if (cell == nil) {
@@ -160,26 +150,16 @@
         return cell;
     }
     [cell updateCellWithModel:model];
-    cell.clickCallback = ^(NSInteger tag, id info){
-        NSString *method = [model valueForKey:@"cellCallbackMethod"];
-        if ([self respondsToSelector:NSSelectorFromString(method)]) {
-            SEL selector = NSSelectorFromString(method);
-            IMP imp = [self methodForSelector:selector];
-            void (*func)(id, SEL, NSInteger, id) = (void *)imp;
-            func(self, selector, tag, info);
-        }
+    __block typeof(self) weakSelf = self;
+    cell.callback = ^(NSInteger tag, id info){
+        [weakSelf clickIndexPath:indexPath withTag:tag other:info];
     };
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    id model;
-    if ([self.dataSource.firstObject isKindOfClass:[NSArray class]]) {
-        model = self.dataSource[indexPath.section][indexPath.row];
-    }else{
-        model = self.dataSource[indexPath.row];
-    }
+    id model = [self modelAtIndexPath:indexPath];
     NSString *method = [model valueForKey:@"method"];
     NSString *modelClass = NSStringFromClass([model class]);
     if ([self respondsToSelector:NSSelectorFromString(method)]) {
@@ -198,11 +178,49 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPat{
+    for (UIView *view in cell.subviews) {
+        if ([view isKindOfClass:NSClassFromString(@"_UITableViewCellSeparatorView")]) {
+            view.backgroundColor = [UIColor redColor];
+            CGRect rect = view.frame;
+            rect.size.height = 2;
+            view.frame = rect;
+        }
+    }
+}
+
+/**
+  获取对应的 model
+ */
+-(id)modelAtIndexPath:(NSIndexPath *)indexPath{
+    id model;
+    if ([self.dataSource.firstObject isKindOfClass:[NSArray class]]) {
+        model = self.dataSource[indexPath.section][indexPath.row];
+    }else{
+        model = self.dataSource[indexPath.row];
+    }
+    return model;
+}
+
+
 #pragma mark - 手势
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {//判断如果点击的是tableView的cell，就把手势给关闭了
         return NO;//关闭手势
     }//否则手势存在
     return YES;
+}
+
+-(void)clickIndexPath:(NSIndexPath *)indexPath withTag:(NSInteger)tag other:(id)other{
+    
+}
+
+-(void)reloadData{
+    [self.tableView reloadData];
+    if (self.dataSource.count == 0) {
+        self.tableView.hidden = YES;
+    }else{
+        self.tableView.hidden = NO;
+    }
 }
 @end

@@ -24,7 +24,9 @@
         case DemoTypeVideo:
             [self testVideo];
             break;
+        case DemoTypeActive:
             
+            break;
         default:
             break;
     }
@@ -42,6 +44,7 @@
     self.playerView = [[VideoPlayerView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 200) sourceURL:url];
     [self.view addSubview:self.playerView];
 }
+
 
 -(void)handleTap:(UITapGestureRecognizer *)tap{
     [self.playerView play];
